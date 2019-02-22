@@ -26,7 +26,7 @@ print('PHPを勉強中です！');
 print('PHPを勉強中です！');
 ?>
 <!-- forwin:http://localhost/MnavPHP/MY_list/chap2/sample00.php -->
-<!-- formac: -->
+<!-- formac:http://localhost:8888/mynavPHP/MnaviPHP/chap3/sample01.php -->
 </main>
 </body>
 </html>

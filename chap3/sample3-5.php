@@ -27,7 +27,7 @@
     echo '<br>';
     echo '税込価格は' . print($sum * 1.08) . '円です';
     echo '<br>';
-
+    
    ?>
   <?php
 

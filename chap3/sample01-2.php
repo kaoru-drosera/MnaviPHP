@@ -22,9 +22,8 @@
 print('PHPを勉強中です！');
 ?>
 </pre>
-<?php
-print('kaoru-drosera');
-?>
+<p><?php print('PHPを勉強中です！'); ?></p>
+<a href="<?php print('http://h2o-space.com'); ?>">タグの属性にPHPを埋め込みました</a>
 <!-- forwin:http://localhost/MnavPHP/MY_list/chap2/sample00.php -->
 <!-- formac:http://localhost:8888/mynavPHP/MnaviPHP/chap3/sample01.php -->
 </main>

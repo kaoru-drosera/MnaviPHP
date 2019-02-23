@@ -20,30 +20,122 @@
 <h3>オブジェクトを使って現在の時刻を表示</h3>
 <pre>
   <?php
-
-    $i=1;
-    while($i <= 365) {
-      print($i . "\n");
-      $i++;
-    }
-    // whileには「繰り返す条件」しか描けない
+    $day = date('n/j(D)');
+    print($day. "\n");
+    //実は、複数のパラメータを指定できる。以下の通り
+    $today = new Datetime();
+    print($today->format('G:i:s')."\n");
+    // どうやら、「$変数 = new Datetime();」、関数「format」を使うようだ。
    ?>
-   <h3>XXX</h3>
-  <?php
+   <?php
+    // dateファンクションの書式
+    // string date(string $format[, int $timestrap = time()]);
+    $day = date('n/j(D)' , 86400);
+    print($day ."\n");
+    // 「86400」とは「1日後」のこと。「1日＝60*60*24=86400」で、要は「1日=86400秒」。
+    // ちなみに、このコードでは1/1の日付から次の日が出る。
+    ?>
+   <?php
+    // strtotimeファンクション
+    // タイムスタンプ = strtotime(日付を表す文字列[,計算のためのタイムスタンプ = time()]);
+    $ieyasu = strtotime('1543/1/31');
+    // strtotime = str(string=文字列) to time = 文字列をタイムスタンプに変換するファンクション。
+    $day_after_tomorrow = strtotime('+2day');
+    $day = date('n/j(D)' , $day_after_tomorrow);
+    print($day . "\n");
+    // …今日から2日後の日付が出てきた。何故…ですか…
+    ?>
+    <?php
+      for($i=1; $i<=365; $i++){
+        $timestamp = strtotime('+' . $i . 'day');
+        $day = date('n/j(D)', $timestamp);
+        print($day . "\n");
+      }
+     ?>
+     <?php
+      // パラメータにファンクションを指定する
+      $timestamp = strtotime('+' . $i . 'day');
+      $day = date('n/j(D)', $timestamp);
+      // $timestrapは一度しか使われないのでもったいない
 
-    for($i=1; $i<=35; $i++){
-      print($i . "\n");
-    }
-    // for文は「変数と始めの状態; 終わる条件; 繰り返す処理」の3つを書ける。
-    // 難しく言えば「初期化処理; 条件; 更新処理」である
-   ?>
+      // コード短縮ver
+      $day = date('n/j(D)', strtotime('+' . $i . 'day'));
+
+      // コード短縮ver.2
+      print(date('n/j(D)', strtotime('+' . $i . 'day')));
+      ?>
+      <h3>練習問題</h3>
+     <?php
+      // 練習問題
+      $i = 1;
+      while($i<=365){ //365になるまで繰り返す
+        $timestamp = strtotime('+' . $i . 'day');
+        $day = date('n/j(D)' , $timestamp);
+        print($day . "<br>");
+        $i++;
+      }
+      ?>
 </pre>
 <h3>XXX</h3>
+<?php
+  $day = date('n/j(D)');
+  print($day. "\n");
+  //実は、複数のパラメータを指定できる。以下の通り
+  echo "<br>";
+  $today = new Datetime();
+  print($today->format('G:i:s')."\n");
+  // どうやら、「$変数 = new Datetime();」、関数「format」を使うようだ。
+ ?>
+ <?php
+  // dateファンクションの書式
+  // string date(string $format[, int $timestrap = time()]);
+  $day = date('n/j(D)' , 86400);
+  print($day ."\n");
+  // 「86400」とは「1日後」のこと。「1日＝60*60*24=86400」で、要は「1日=86400秒」。
+  // ちなみに、このコードでは1/1の日付から次の日が出る。
+  ?>
+ <?php
+  // strtotimeファンクション
+  // タイムスタンプ = strtotime(日付を表す文字列[,計算のためのタイムスタンプ = time()]);
+  $ieyasu = strtotime('1543/1/31');
+  // strtotime = str(string=文字列) to time = 文字列をタイムスタンプに変換するファンクション。
+  $day_after_tomorrow = strtotime('+2day');
+  $day = date('n/j(D)' , $day_after_tomorrow);
+  print($day . "\n");
+  // …今日から2日後の日付が出てきた。何故…ですか…
+  ?>
   <?php
+    for($i=1; $i<=365; $i++){
+      $timestamp = strtotime('+' . $i . 'day');
+      $day = date('n/j(D)', $timestamp);
+      print($day . "<br>");
 
-
-
+    }
    ?>
+   <?php
+    // パラメータにファンクションを指定する
+    $timestamp = strtotime('+' . $i . 'day');
+    $day = date('n/j(D)', $timestamp);
+    // $timestrapは一度しか使われないのでもったいない
+
+    // コード短縮ver
+    $day = date('n/j(D)', strtotime('+' . $i . 'day'));
+
+    // コード短縮ver.2
+    print(date('n/j(D)', strtotime('+' . $i . 'day')));
+    ?>
+    <h3>練習問題</h3>
+   <?php
+    // 練習問題
+    $i = 1;
+    while($i<=365){ //365になるまで繰り返す
+      $timestamp = strtotime('+' . $i . 'day');
+      $day = date('n/j(D)' , $timestamp);
+      print($day . "<br>");
+      $i++;
+    }
+    ?>
+
 
    <!-- おまけ：変数名は少し長くなっても
    「きちんと意味のある名前」になるように心がける。

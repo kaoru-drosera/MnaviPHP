@@ -1,0 +1,2 @@
+git対応ファイルはここでつよん！
+C:\xampp\htdocs\MnavPHP\MY_list

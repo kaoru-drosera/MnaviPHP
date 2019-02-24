@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>よくわかるPHPの教科書</title>
+</head>
+<body>
+  <h3>フォームの内容を受け取る</h3>
+  <form action="submit.php">
+    <label for="my_name">お名前</label>
+    <input type="text" id="my_name" name="my_name" maxlength="255" value="">
+    <input type="submit" value="送信する">
+    <!-- ハッキング実験コードを以下に貼っておくよ -->
+    <!-- <script>for(var i=0; i<10; i++){aleat('ぶっ壊してやらぁ！');}</script> -->
+  </form>
+  練習問題
+  <form action="submit_prac.php" method="get">
+    <dl>
+      <dt><labet for="my_namae">お名前:</labet></dt>
+      <dd>
+        <input id="my_namae" type="text" name="my_namae" size="35" maxlength="255" value="">
+      </dd>
+      <dt><labet for="message">メッセージ:</labet></dt>
+      <dd>
+        <input id="message" type="text" name="message" size="35" maxlength="255" value="">
+      </dd>
+    </dl>
+    <input type="submit" value="送信する">
+  </form>
+</body>
+</html>

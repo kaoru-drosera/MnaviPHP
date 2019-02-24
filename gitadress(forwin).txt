@@ -1,2 +1,1 @@
-git対応ファイルはここでつよん！
-C:\xampp\htdocs\MnavPHP\MY_list
+「MnavPHP（C:\xampp\htdocs\MnavPHP）」にデータをクローン、そしてそこで最初からローカルリポジトリを作成してpush

@@ -20,18 +20,18 @@
 <pre>
   <p>ご予約日:</p>
   <?php
-    // $reserves = $_POST['reserve'];
-    // var_dump($reserves);
-    // code by http://blog.ruedap.com/2011/03/17/php-html-form-checkbox-value-array
-    // 受け取りは出来たものの、コードになって出てきてしまった。
-  ?>
-  <?php
-    $reserves = filter_input_array(INPUT_POST, 'reserve', FILTER_SANITIZE_ENCODED);
-    foreach((array)$reserves as $reserve){
-      echo $reserve;
+    if(isset($_POST['reserve'])){
+    // 「isset()」は、「変数が入っているかどうか」を調べる関数だ。
+
+    // ちなみに、「!isset()」なら「変数が空かどうか」という意味になる。
+    // 「empty()」とも似ているが、これは「変数が『0』でも空として扱う」という特徴がある。
+    // 「!isset()」なら「変数が『0』であっても「変数が入っている」」という意味になるぞ！
+
+      foreach($_POST['reserve'] as $value){
+        print(htmlspecialchars($value.ENT_QUOTES) . "<br>");
+      }
     }
-    // エラーは出なかったが、データが表示されない。
-  ?>
+   ?>
   <p>…といってもこのコードじゃ実務じゃ不安</p>
   <p>にしてもまさかお手本コードでダメな時があるなんて</p>
 </pre>

@@ -108,6 +108,16 @@ SELECT * FROM maker, my_item WHERE maker.id=my_item.maker_id;
 
 
 
+SELECT * FROM maker m, my_item i WHERE m.id=i.maker_id;
+-- このように、使用するサーバー名を変数として使うことで
+-- コードを短縮することも可能。
+-- 意味「
+  -- makerとmy_itemから
+--   ①:「my_item内のidが『1』」
+--   ②:「maker内のid」と、「my_item内のmaker_id」が一致している
+--   の条件を全て満たしたデータを
+  -- 全て持ってきて！
+-- 」
 
 
 

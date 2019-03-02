@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: 
--- サーバのバージョン： 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Host: localhost:8889
+-- Generation Time: Mar 02, 2019 at 06:34 AM
+-- Server version: 5.7.23
+-- PHP Version: 7.1.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mydb_bymnaviphp`
+-- Database: `mydb_byMnaviPHP`
 --
 
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `carts`
+-- Table structure for table `carts`
 --
 
 CREATE TABLE `carts` (
@@ -35,7 +33,7 @@ CREATE TABLE `carts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- テーブルのデータのダンプ `carts`
+-- Dumping data for table `carts`
 --
 
 INSERT INTO `carts` (`id`, `items_id`, `count`) VALUES
@@ -49,7 +47,7 @@ INSERT INTO `carts` (`id`, `items_id`, `count`) VALUES
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `item`
+-- Table structure for table `item`
 --
 
 CREATE TABLE `item` (
@@ -58,7 +56,7 @@ CREATE TABLE `item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- テーブルのデータのダンプ `item`
+-- Dumping data for table `item`
 --
 
 INSERT INTO `item` (`id`, `name`) VALUES
@@ -70,7 +68,7 @@ INSERT INTO `item` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `maker`
+-- Table structure for table `maker`
 --
 
 CREATE TABLE `maker` (
@@ -81,7 +79,7 @@ CREATE TABLE `maker` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- テーブルのデータのダンプ `maker`
+-- Dumping data for table `maker`
 --
 
 INSERT INTO `maker` (`id`, `name`, `address`, `tel`) VALUES
@@ -93,7 +91,7 @@ INSERT INTO `maker` (`id`, `name`, `address`, `tel`) VALUES
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `memos`
+-- Table structure for table `memos`
 --
 
 CREATE TABLE `memos` (
@@ -103,7 +101,7 @@ CREATE TABLE `memos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- テーブルのデータのダンプ `memos`
+-- Dumping data for table `memos`
 --
 
 INSERT INTO `memos` (`id`, `memo`, `created_at`) VALUES
@@ -112,12 +110,16 @@ INSERT INTO `memos` (`id`, `memo`, `created_at`) VALUES
 (3, '\r\n    これは\"メッセージです\"\r\nつってｗｗｗｗｗｗｗ', '2019-03-02 01:21:57'),
 (4, 'おぉほんとに登録できる', '2019-03-02 01:22:23'),
 (5, 'HTMLちょっといじったよ', '2019-03-02 01:23:47'),
-(6, 'ダンガンロンパは終わってくれるよね！？', '2019-03-02 02:30:59');
+(6, 'ダンガンロンパは終わってくれるよね！？', '2019-03-02 02:30:59'),
+(7, 'aaaa', '2019-03-02 14:30:26'),
+(8, 'ccccc', '2019-03-02 14:31:11'),
+(9, 'やった…', '2019-03-02 14:31:26'),
+(10, 'っっっっっc', '2019-03-02 14:31:38');
 
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `my_item`
+-- Table structure for table `my_item`
 --
 
 CREATE TABLE `my_item` (
@@ -132,7 +134,7 @@ CREATE TABLE `my_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- テーブルのデータのダンプ `my_item`
+-- Dumping data for table `my_item`
 --
 
 INSERT INTO `my_item` (`id`, `maker_id`, `item_name`, `price`, `keyword`, `sales`, `created`, `Modified`) VALUES
@@ -191,14 +193,13 @@ ALTER TABLE `maker`
 -- AUTO_INCREMENT for table `memos`
 --
 ALTER TABLE `memos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `my_item`
 --
 ALTER TABLE `my_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

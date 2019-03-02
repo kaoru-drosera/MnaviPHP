@@ -1,3 +1,9 @@
+<?php
+  require('5-6dbconnect(forMac).php');
+  // require('5-6dbconnect(forWin).php');
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -14,54 +20,6 @@
   <h2>Practice</h2>
   <pre>
   <?php
-      // *forWIN
-    // try{
-    //   $db = new PDO('mysql:dbname=mydb_bymnaviphp; host=localhost; charset=utf8', 'root', '');
-    //   $db->exec('INSERT INTO memos SET memo"' . $_POST['memo'] . '", created_at=NOW()');
-    //
-    // } catch (PDOException $e) {
-    //   echo 'DB接続エラー:' . $e->getMessage();
-    // }
-
-    //   *forMAC
-    //   $db = new PDO('mysql:dbname=mydb_bymnaviphp; host=localhost; charset=utf8', 'root', 'root');
-    //   $db->exec('INSERT INTO memos SET memo"' . $_POST['memo'] . '", created_at=NOW()');
-    //
-    // } catch (PDOException $e) {
-    //   echo 'DB接続エラー:' . $e->getMessage();
-    // }
-
-    // 「exec('')」を使って「INSERT」を入れ、DB上に保存できるようにする。
-
-
-    // $db->exec('INSERT INTO memos SET memo="' . $_POST['memo'] . '", created_at=NOW()');
-    // 上のコードを使うことで一応フォームからの値を受け取ることは出来るが、
-    // ユーザーからの入力をコードも構わずそのまま受け取るので攻撃を受けかねない。
-    // 「prepare()」を使って、無害(サニタイズ)する必要がある。
-    // SQLの文章を組み立てる時、危険性の高いキーワードを無害化してくれるのだ。
-    //
-    // 加えて、「これは"メッセージです"」といった風に、
-    // INSERT INTO memos SET memo="これは"メッセージです"";
-    // のように「""」が重複して正常に機能しないコードも
-    // 正しく入力してくれるようになる。
-
-
-
-    // *forWIN
-  // try{
-  //   $db = new PDO('mysql:dbname=mydb_bymnaviphp; host=localhost; charset=utf8', 'root', '');
-  //
-  // } catch (PDOException $e) {
-  //   echo 'DB接続エラー:' . $e->getMessage();
-  // }
-
-  //   *forMAC
-  try{
-    $db = new PDO('mysql:dbname=mydb_bymnaviphp; host=localhost; charset=utf8', 'root', 'root');
-
-  } catch (PDOException $e) {
-    echo 'DB接続エラー:' . $e->getMessage();
-  }
 
     $statement = $db->prepare('INSERT INTO memos SET memo=?, created_at=NOW()');
     $statement->execute(array($_POST['memo']));
@@ -152,6 +110,6 @@
 
    ?>
  </pre>
-  <a href="5-4index.html">戻る</a>
+  <a href="5-5index.php">戻る</a>
 </body>
 </html>

@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  text-decoration: none;
+}
+
+.container{
+  margin: auto;
+  width: 800px;
+  padding: 0 0 25px 0;
+}
+h1{
+  color: #d75947;
+}
+.fontChange{
+  font-family: serif;
+}

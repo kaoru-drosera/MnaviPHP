@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>フォームを練習</title>
+</head>
+<body>
+  <style type="text/css">
+    .rockman{color:blue;}
+    h1{color: #f00;}
+    body{color: gray;}
+    .check{color: blue;}
+  </style>
+  <h1 class="rockman">フォーム練習</h1>
+  <h1>フォーム練習</h1>
+  <form　method="post" action="submit.html">
+
+    <div class="adpass">
+      <div class="mail">
+        <label for="mail">メールアドレス<input id="mail" type="text" name="mail"></label>
+      </div>
+
+      <div class="pass">
+        <label for="pass">パスワード<input id="pass" type="text" name="pass"></label>
+      </div>
+    </div>
+
+    <div class="radio">
+      <label for="Me"><input id="Me" class="char" type="radio" name="char"value="Me" checked>ロックマン</label>
+      <label for="Bl"><input id="Bl" class="char" type="radio" name="char"value="Bl">ブルース</label>
+      <label for="Fl"><input id="Fl" class="char" type="radio" name="char"value="Fl">フォルテ</label>
+    </div>
+
+    <div class="check">
+      <label for="P"><input id="P" type="checkbox" name="weapon[]" value="M" checked>ロックバスター</label>
+      <label for="M"><input id="M" type="checkbox" name="weapon[]" value="M">メタルブレード</label>
+      <label for="A"><input id="A" type="checkbox" name="weapon[]" value="A">エアーシューター</label>
+      <label for="B"><input id="B" type="checkbox" name="weapon[]" value="B">バブルリード</label>
+      <label for="Q"><input id="Q" type="checkbox" name="weapon[]" value="Q">クイックブーメラン</label>
+      <label for="C"><input id="C" type="checkbox" name="weapon[]" value="C">クラッシュボム</label>
+      <label for="F"><input id="F" type="checkbox" name="weapon[]" value="F">タイムストッパー</label>
+      <label for="H"><input id="H" type="checkbox" name="weapon[]" value="H">アトミックファイヤー</label>
+      <label for="W"><input id="W" type="checkbox" name="weapon[]" value="W">リーフシールド
+    </div>
+
+    <div class="diff">
+      <label for="diff">難易度選択
+        <select name="diff" id="diff">
+          <option value="nc">NEW COMER</option>
+          <option value="ad">ADVANCED</option>
+          <option value="osp">ORIGINAL SPEC</option>
+          <option value="ex">EXPERT</option>
+        </select>
+      </label>
+    </div>
+
+    <label for="comment">
+      <legend>コメント</legend>
+      <textarea name="commentHere" id="comment" cols="30" rows="10" placeholder="WTF"></textarea>
+    </label>
+
+    <div class="r">
+
+      <label for="ur"><input type="checkbox" name="r[]" id="ur">UR</label>
+      <label for="ar"><input type="checkbox" name="r[]" id="ar">AR</label>
+      <label for="xr"><input type="checkbox" name="r[]" id="xr">XR</label>
+      <label for="yr"><input type="checkbox" name="r[]" id="yr">YR</label>
+    </div>
+
+    <div class="submit">
+      <div>
+        <input type="submit" name="submit" value="送信するぴょ">
+      </div>
+
+      <div>
+        <input type="reset">
+      </div>
+    </div>
+
+
+  </form>
+</body>
+</html>

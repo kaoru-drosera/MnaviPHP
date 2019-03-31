@@ -1,0 +1,16 @@
+.linethrough{
+  text-decoration: line-through;
+}
+.ttr-1{
+  text-transform: capitalize;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.lowercase{
+  text-transform: lowercase;
+}
+.none{
+  text-transform: none !important;
+  text-decoration: none !important;
+}

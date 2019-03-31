@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>フレームを練習</title>
+  <link rel="stylesheet" href="frame.css">
+</head>
+<body>
+  <frameset rows="20%, 80%">
+    <p>rowsタグでページを分割します。</p>
+    <frame src="A.html" name="menu">
+    <p>frameタグで表示するページを指定します。</p>
+    <frameset rows="20%, 80%">
+      <frame src="B.html" name="date">
+      <frame src="C.html" name="mycontents">
+    </frameset>
+    <noframes>
+      <body>
+        <p>このページはフレームを使用しております。</p>
+        <p>フレーム日対応ブラウザのために表示するメッセージを記述しています。</p>
+      </body>
+    </noframes>
+  </frameset>
+</body>
+</html>

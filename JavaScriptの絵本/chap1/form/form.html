@@ -12,6 +12,14 @@
     h1{color: #f00;}
     body{color: gray;}
     .check{color: blue;}
+    input.submit_button{
+      width: 150px;
+      border: none;
+      background-color: #9f9;
+      padding: 10px 20px;
+      margin: 5px 0;
+      cursor: pointer;
+    }
   </style>
   <h1 class="rockman">フォーム練習</h1>
   <h1>フォーム練習</h1>
@@ -69,13 +77,19 @@
       <label for="yr"><input type="checkbox" name="r[]" id="yr">YR</label>
     </div>
 
+    <div class="form190401">
+      <label for="As"><input type="radio" name="A" value="" id="As" checked>astro</label>
+      <label for="Bs"><input type="radio" name="A" value="" id="Bs">bold</label>
+      <label for="Cs"><input type="radio" name="AS" value="" id="Cs">crash</label>
+    </div>
+
     <div class="submit">
       <div>
-        <input type="submit" name="submit" value="送信するぴょ">
+        <input class="submit_button" type="submit" name="submit" value="送信するぴょ">
       </div>
 
       <div>
-        <input type="reset">
+        <input class="submit_button" type="reset">
       </div>
     </div>
 

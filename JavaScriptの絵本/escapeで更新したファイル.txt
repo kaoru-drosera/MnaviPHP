@@ -9,3 +9,6 @@ chap3/for/
 chap3/while/
 ・while.js
 ・while.js
+chap3/switch/
+・switch.js
+・switch.js

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>サンプルプログラムだぁぁぁぁ！！！！</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="" type="text/css">
+  <script type="text/javascript" src="judgement.js"></script>
+  <script type="text/javascript">
+    var strMsg0 = "じゃんけんしますか？"
+
+    // 確認ダイアログを表示し、「いいえ」のときはボタンを無効化する
+    function init(){
+      if(!confirm(strMsg0)){
+        document.getElementById("btnR").disabled = true;
+        // 「getElementById」でidがあるコードにだけ
+        // 設定が適応するようにする。
+        // そして、disabledで設定を無効化するのだ。
+        document.getElementById("btnP").disabled = true;
+        document.getElementById("btnS").disabled = true;
+      }
+    }
+
+    // ジャンケンの結果を表示する。
+    function myChoise(RPSUser){
+      var strLocal = myResult(RPSUser);
+      alert(strLocal);
+    }
+  </script>
+</head>
+<body onload="init()">
+  <!-- ↑bodyタグにonload属性を付けることで、
+  関数、という形でjavascriptを読み込むのだ。
+  この場合、「いいえ」が押された時に全てのボタンを
+  無効化する、といった意味合いでいいのかナ-->
+
+  <form name="form1" action="">
+    <input type="button" id="btnR" onclick="myChoise(0)" value="グー">
+    <input type="button" id="btnP" onclick="myChoise(1)" value="チョキ">
+    <input type="button" id="btnS" onclick="myChoise(2)" value="パー">
+    <br>
+  </form>
+
+</body>
+</html>

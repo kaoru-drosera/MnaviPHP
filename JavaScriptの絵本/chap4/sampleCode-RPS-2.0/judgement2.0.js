@@ -22,22 +22,22 @@ function myResult(RPSUser){
     // それを3で割った余りが
     // RPSUserの値と同じ」
     //ということだろう。
-    //なら、「RPSUser」がわからないのだが…
-    //
 
-    //
+    // 追記:
+    // そうか！「(RPSComp+1)%3」の値は、
+    // 「RPSComp」が「2」になった時
+    // 「0」に変換する役割があったのか！
+
     // →「RPSUser」は、form1のinputで定めていた
     // onclickの「myChoise」の数字に鍵があった。
     // 要は、「myChoise()の数字と*1が等しい」
     // ということではないだろうか？
-
 
     // 選ばれたform1>input内のonclick要素が
     // myChoiseの数字となり、
     // それがmyResultの引数となる。
     // これが、RPSUserの値となるのだろう。
     //
-
     return strMsg2;
   }else{
     return strMsg3;
@@ -45,7 +45,6 @@ function myResult(RPSUser){
 }
 
 function cpuResult(comp){
-
   if(comp == 0){
     return "グー";
   }else if(comp == 1){
@@ -68,7 +67,6 @@ function cpuResult(comp){
   // 本当はやりたくなかったが、
   // 「strMsg2」「strMsg3」の値を入れ替えることで
   // この論理エラーだけは直せた。
-
 }
 
 

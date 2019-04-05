@@ -1,6 +1,6 @@
 var strMsg1 = "あいこです";
-var strMsg2 = "あなたの勝ちです";
-var strMsg3 = "私の勝ちです";
+var strMsg2 = "私の勝ちです";
+var strMsg3 = "あなたの勝ちです";
 
 
 function myResult(RPSUser){
@@ -30,7 +30,8 @@ function myResult(RPSUser){
     // onclickの「myChoise」の数字に鍵があった。
     // 要は、「myChoise()の数字と*1が等しい」
     // ということではないだろうか？
-    //
+
+
     // 選ばれたform1>input内のonclick要素が
     // myChoiseの数字となり、
     // それがmyResultの引数となる。
@@ -43,6 +44,30 @@ function myResult(RPSUser){
   }
 }
 
+function cpuResult(comp){
+
+  if(comp == 0){
+    return "グー";
+  }else if(comp == 1){
+    return "チョキ";
+  }else{
+    return "パー";
+  }
+  // 表示させるだけはできたが、
+  // 論理エラーの発生したコードだ。
+  // myChoiseのように、
+  // 「0=グー」「1=チョキ」「2=パー」
+  // で役割を当てた。
+  // 数字は「RPSComp」の値である。
+  //
+  // あいこだけあってる。
+  // ただ、勝利条件が逆転している。
+  // 「自分:グー 相手:チョキ」で
+  // 相手の勝ちになってしまう。
+  //
+  // 本当はやりたくなかったが、
+  // 「strMsg2」「strMsg3」の値を入れ替えることで
+  // この論理エラーだけは直せた。
 
 }
 

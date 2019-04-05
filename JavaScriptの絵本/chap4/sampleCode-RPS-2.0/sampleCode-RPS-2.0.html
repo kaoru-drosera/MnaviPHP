@@ -10,7 +10,7 @@
   <meta name="author" content="">
   <link rel="icon" href="">
   <link rel="stylesheet" href="" type="text/css">
-  <script type="text/javascript" src="judgement.js"></script>
+  <script type="text/javascript" src="judgement2.0.js"></script>
   <script type="text/javascript">
     var strMsg0 = "じゃんけんしますか？"
 
@@ -29,7 +29,9 @@
     // ジャンケンの結果を表示する。
     function myChoise(RPSUser){
       var strLocal = myResult(RPSUser);
-      alert(strLocal);
+      var strLocal2 = cpuResult(comp);
+      alert("CPU:" + strLocal2 + "\n" + strLocal + "\n" + comp);
+      // alert("CPU:" + comp + "\n" + strLocal + "\n");
     }
 
     // // RPSCompの中身を表示してみる
@@ -52,6 +54,8 @@
   この場合、「いいえ」が押された時に全てのボタンを
   無効化する、といった意味合いでいいのかナ-->
 
+<h1>機能追加ミッション:</h1>
+<h2>結果表示に、「相手の手番」を表示できるようにしたい。</h2>
   <form name="form1" action="">
     <input type="button" id="btnR" onclick="myChoise(0)" value="グー">
     <input type="button" id="btnP" onclick="myChoise(1)" value="チョキ">

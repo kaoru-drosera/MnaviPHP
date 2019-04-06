@@ -58,13 +58,13 @@ document.write("<br>","…クソ！今日のところは引き上げだ！","<br
 document.write("<br>","…Uncaught TypeError: Cannot set property 'name' of undefined","<br>");
 
 
-var fri_2d = new Array();
-fri_2d['serval']['name'] = 'サーバル';
-fri_2d['serval']['serif'] = 'すっごーい！';
-fri_2d['otter']['name'] = 'カワウソ';
-fri_2d['otter']['serif'] = 'たーのしー！';
-fri_2d['alpaca']['name'] = 'アルパカ';
-fri_2d['alpaca']['serif'] = 'ふわああああぁ！';
+// var fri_2d = new Array();
+// fri_2d['serval']['name'] = 'サーバル';
+// fri_2d['serval']['serif'] = 'すっごーい！';
+// fri_2d['otter']['name'] = 'カワウソ';
+// fri_2d['otter']['serif'] = 'たーのしー！';
+// fri_2d['alpaca']['name'] = 'アルパカ';
+// fri_2d['alpaca']['serif'] = 'ふわああああぁ！';
 
 
 

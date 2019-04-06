@@ -12,6 +12,14 @@ document.write("<br>","<br>",a,"<br>","<br>","このように、「1」で指定
 document.write("[]をつけず、配列名のみ指定した場合には、配列内の値すべてを列挙する。","<br>");
 document.write("例えば、フォームで受け取った値がきちんと配列内に入っているかを確認したい場合には便利かも。","<br>");
 
-c = ["lilac","carol","milla"]
+c = ["lilac","carol","milla"];
 document.write("<br>",c,"<br>","<br>","配列は、通常「配列名 = new Array()」で定めるところだが、「配列名 = []」でも定められる。","<br>");
-document.write("ラクチネルパッチ！…でもミスしやすくもなりそう。","<br>");
+document.write("ラクチネルパッチ！…でもミスしやすくもなりそう。","<br>","<br>");
+
+d = [];
+d[0] = 4;
+d[1] = "サーンwwww";
+d[2] = "弐";
+d[3] = "I";
+d[4] = "zero";
+document.write("<br>",d,"<br>","<br>");

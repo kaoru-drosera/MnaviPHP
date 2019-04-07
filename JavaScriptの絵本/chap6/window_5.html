@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>どうせできない…</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="" type="text/css">
+  <script type="text/javascript">
+
+  </script>
+</head>
+<body>
+  <style type="text/css">
+  </style>
+    <form name="myForm" action="/cgi-bin/formobj.cgi" method="get">
+      <label for="ip1"><p>名前<input type="text" name="NM" id="ip1"></p></label>
+      <input type="submit" name="submit" value="777">
+    </form>
+  <!-- <script type="text/javascript" src="window_5.js"></script> -->
+  <p>「document.forms.length;」で、フォームの数を参照する。ちなみに、「forms」は配列になる。</p>
+  <p>「document.forms[].length;」は、「エレメントの数」を参照する。</p>
+  <p>「document.forms[formのname要素名].length;」は、
+    「formのname要素名」で決められたフォームのフォーム数を参照する。</p>
+    <p>例:「document.forms[myForm].length;」 = 「name属性が『myForm』のform要素のフォームの数」ということに。</p>
+</body>
+</html>

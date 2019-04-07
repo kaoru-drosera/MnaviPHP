@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>どうせできない…</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="" type="text/css">
+</head>
+<script type="text/javascript">
+day = new Date(2019,1,1,0,0,0);
+now = new Date;
+
+Time = day.getTime() - now.getTime();
+days = Math.ceil(Time / (24 * 60 * 60 * 1000));
+document.write("<h3>てな訳で、「日付までの間隔」を割り出してみたぞ！</h3>","<br>");
+document.write("(24 * 60 * 60 * 1000)で割ることで、ミリ秒から日単位に再計算。","<br>");
+document.write("「Math.ceil」演算子は小数点以下切り上げ。","<br>");
+document.write("そして、気になる計算結果がこちら。","<br>","<br>");
+document.write(days,"日","<br>");
+
+
+</script>
+<body>
+  <style type="text/css">
+  </style>
+
+  <script type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>どうせできない…</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="" type="text/css">
+</head>
+<body>
+  <h3>「その他のオブジェクト」ごった煮!</h3>
+  <style type="text/css">
+  .ss{
+    padding-bottom: 30px;
+  }
+  </style>
+  <script type="text/javascript">
+    document.write("<br>","<h3>Historyで「進む」「戻る」ボタンを作る。</h3>");
+  </script>
+    <input type="button" value="戻る「history.back()」" onclick="history.go(-1)">
+    <input type="button" value="進む「history.forward()」" onclick="history.go(-1)">
+    <input type="button" value="-1移動する「history.go(-1)」" onclick="history.go(-1)">
+    <p>「history.back()」で「進む」</p>
+    <p>「history.forward()」で「戻る」</p>
+    <p>「history.go(数値)」で、「(数値)」分だけ移動する。「-」なら戻る。</p>
+  <script type="text/javascript">
+    document.write("<br>","<h3>imagesで画像を調べる(?)</h3>");
+  </script>
+    <p>「document.images.length」で、ドキュメント上の画像の数を確認できる。</p>
+    <p>「document.images[0].src」で、「[0]番目の画像のURLを確認する」。</p>
+    <p>「document.myimage.src」で、「name属性が「myimage」の画像のURLを確認する」。</p>
+  <script type="text/javascript">
+    document.write("<br>","<h3>anchorsで「リンク」を調べる(?)</h3>");
+  </script>
+    <div><a name="google" href="https://www.google.co.jp/">googleへ飛ぶ</a></div>
+    <div><a name="apple" href="https://www.apple.com/jp/?afid=p238%7CsKSMckWTz-dc_mtid_18707vxu38484_pcrid_286568846821_&cid=aos-jp-kwgo-brand--slid--product-">appleへ飛ぶ</a></div>
+    <div><a name="facebook" href="https://ja-jp.facebook.com/">facebookへ飛ぶ</a></div>
+    <div><a name="amazon" href="https://www.amazon.com/ref=nav_logo">amazonへ飛ぶ</a></div>
+
+  <script type="text/javascript">
+    g = document.anchors.length;
+    ap = document.anchors[0].href;
+    f = document.anchors[2].name;
+    am = document.anchors[3].href;
+    document.write(g,"<br>","「document.anchors.length;」=ドキュメント内のアンカー、要はaタグの数","<br>","<br>");
+    document.write(ap,"<br>","「document.anchors[0].href」=『1』番目のリンクの「href属性名(要はリンク先)」","<br>","<br>");
+    document.write(f,"<br>","「document.anchors[2].name」 = 「3」番目のリンクの「name」属性名。","<br>","<br>");
+    document.write(am,"<br>","「document.anchors[3].href」 = 「4」番目のリンクの「href属性名」…apと同じ。","<br>","<br>");
+  </script>
+    <p></p>
+  <!-- <script type="text/javascript" src="window_10.js"></script> -->
+  <script type="text/javascript">
+    document.write("<br>","<h3>Navigatorで環境情報を取得(豚野郎言うな)</h3>");
+    document.write("<p>例えば、ブラウザのエージェント名はこうして表示する。</p>",'<br>');
+    document.write("<p>「document.write(navigator.userAgent);」</p>",'<br>');
+    document.write("<p>結果は以下の通り。</p>",'<br>');
+    document.write(navigator.userAgent,'<br>');
+    document.write("<p>他にも色々書くけどあとの詳しいことは検証→「sorces」で参考にして</p>",'<br>');
+    document.write(navigator.appName,'<br>');
+    document.write(navigator.appVersion,'<br>');
+    document.write(navigator.appCodeName,'<br>');
+    document.write(navigator.platform,'<br>');
+    document.write(navigator.javaEnabled(),'<br>');
+  </script>
+
+
+
+
+
+</body>
+</html>

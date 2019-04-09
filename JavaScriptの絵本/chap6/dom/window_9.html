@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>どうせできない…</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="" type="text/css">
+  <script type="text/javascript">
+    function getElementsNum(){
+      var inp = document.getElementsByTagName("input");
+      alert('type="input"の要素は' + inp.length + '個です');
+    }
+  </script>
+</head>
+<body>
+  <style type="text/css">
+  .ss{
+    padding-bottom: 30px;
+  }
+  </style>
+  <p id="ehon">jsの絵本</p>
+  <textarea placeholder="ご意見、ご感想をお聞かせください。" name="" id="" cols="30" rows="10"></textarea>
+  <p><label for="leg"><input type="checkbox" id="leg" name="leg">利用規約に同意</label></p>
+  <p><input type="submit" value="送信"></p>
+  <p><input type="reset" value="リセット"></p>
+  <button onclick="getElementsNum()">type="input"の要素数は？</button>
+  <script type="text/javascript">
+    a = document.getElementById("ehon");
+    // id属性がehonの要素を取り出して
+    // 変数aで代入します
+    a.innerHTML = "JavaScriptの絵本";
+    // aのオブジェクトを「JavaScriptの絵本」
+    // に変更
+  </script>
+  <p>inputの数を教えてくれるボタンが誕生した。</p>
+  <p>「getElementsByTagName("input")」でinput属性のものを取り出し、</p>
+  <p>「length」で数を求めたのだ。</p>
+  <p class="ss"></p>
+  <p>もう一つ、テキストエリアのテキストを</p>
+  <p>「jsの絵本」から「JavaScriptの絵本」に変更になっている。</p>
+  <p>「getElementById」でidを取り出し、「innerHTML」を使ってテキストを変更したのだ。</p>
+</body>
+</html>

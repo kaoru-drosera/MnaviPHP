@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>どうせできない…</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="" type="text/css">
+  <script type="text/javascript">
+    function check(){
+      for(i=0; i<document.form1.length; i++){
+        //「document.form1.length」 = 「form1のフォームの数だけ」
+        //「for(i=0; i<document.form1.length; i++){}」
+        // = 「form1のフォームの数だけ,0(１番目)から最後まで」
+        if(document.form1.elements[i].value == ""){
+          //↑空欄のフォームがある場合
+          alert("購入する場合は、\n全項目の入力をお願いします。");
+          return false;//送信を中止する
+        }
+      }
+      return true;
+      // for文に当てはまらなければ処理を続行
+    }
+  </script>
+</head>
+<body>
+  <style type="text/css">
+  </style>
+    <form name="myForm" onsubmit="return check()"
+       action="/cgi-bin/formobj.cgi" method="get">
+       <p><label for="name">名前:<input type="text" id="name" name="name"></label></p>
+       <p><label for="add">住所:<input type="text" id="add" name="add" size="55"></label></p>
+       <p><label for="evening">購読する:<input type="checkbox" id="evening" name="evening" value="1"></label></p>
+        <p>「onsubmit属性」とは、</p>
+        <p>送信ボタンクリック時に(ここでは)check()関数を呼び出し、</p>
+        <p>戻り値がtrueならsubmitし、falseならsubmitを中止する。</p>
+      <input type="submit" value="送信する">
+      <input type="reset" value="入力をやり直す">
+      </p>
+    </form>
+  <script type="text/javascript" src="window_sample.js"></script>
+  <!-- <p>optionオブジェクトを参照するには、Selectオブジェクトの「optionプロパティ」を使うのだ。</p>
+  <p>「document.formタグで設定したname属性名.selectタグで設定したname属性名.options[参照番号].text(数値を調べる)」…正直書いてあったから書いただけ。多分理解はできないと思う。</p> -->
+</body>
+</html>

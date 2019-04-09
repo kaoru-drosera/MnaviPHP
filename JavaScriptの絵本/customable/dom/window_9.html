@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>どうせできない…</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="" type="text/css">
+  <script type="text/javascript">
+    function getElementsNum(){
+      var inp = document.getElementsByTagName("input");
+      alert('type="input"の要素は' + inp.length + '個です');
+    }
+  </script>
+</head>
+<body>
+  <style type="text/css">
+  .ss{
+    padding-bottom: 30px;
+  }
+  </style>
+  <p class="ehon">jsの絵本</p>
+  <textarea placeholder="ご意見、ご感想をお聞かせください。" name="" id="" cols="30" rows="10"></textarea>
+  <p><label for="leg"><input type="checkbox" id="leg" name="leg">利用規約に同意</label></p>
+  <p><input type="submit" value="送信"></p>
+  <p><input type="reset" value="リセット"></p>
+  <button onclick="getElementsNum()">type="input"の要素数は？</button>
+  <script type="text/javascript">
+    a = document.getElementById("ehon");
+    a.innerHTML = "JavaScriptの絵本";
+  </script>
+</body>
+</html>

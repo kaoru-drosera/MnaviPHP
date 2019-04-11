@@ -13,10 +13,17 @@
   <form action="" name="form1">
     <label for="open"><input type="button" id="open" name="btnOpen" value="open" onclick="openWindow()"></label>
     <label for="close"><input type="button" id="close" name="btnClose" value="close" onclick="closeWindow()"></label>
+    <!--
+      ↑javascriptで設定した関数をonclick属性に置くことによって、
+      ボタンが押された時にが発動するようになっている？
+     -->
     <br>
     <p><label for="tUrl">URL:<input type="text" id="tUrl" name="txtUrl"></label></p>
     <p><label for="tWidth">幅:<input type="text" id="tWidth" name="txtWidth"></label></p>
     <p><label for="tHeight">高さ:<input type="text" id="tHeight" name="txtHeight"></label></p>
+    <!--
+      ↑このフォーム3つのname属性が、javascriptから値を受け取っている？
+     -->
   </form>
 </body>
 </html>

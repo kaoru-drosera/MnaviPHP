@@ -6,7 +6,6 @@ function init(){
   // (ねんのため)form1はhtml側のformタグのname属性。
   // btnCloseはhtml側の「close」ボタンのname属性。
   // disabledは「フォームを無効化させる」プロパティ。
-  // よって、4行目は「閉じるボタンを使えなくする」設定だ。
 }
 
 function openWindow(){
@@ -54,18 +53,14 @@ function openWindow(){
 function closeWindow(){
   myWin.close();
   document.form1.btnClose.disabled = true;
-  // ↑前言撤回。「使えなくする」
-  // 設定はinit関数でもともと定まっていた。
-  // だから、これは「ウィンドウを閉じ終わったとき
-  // もう一度使えなくする設定」
-  // という意味で間違い無いだろう。
+  // ↑「基本的には使えなくする」設定のようだ。
 }
 
 function errorCheck(){
   var errMsg = "";
 
   for(i=0; i<document.form1.length; i++){
-    if(document.form1.elements[i].type == "text" && document.form1.elements[i].value == ""){
+    if(document.form1.elements[i].type == "text" && document.form1.elements[i].value ==""){
 
       switch (document.form1.elements[i].name) {
         case "txtUrl":

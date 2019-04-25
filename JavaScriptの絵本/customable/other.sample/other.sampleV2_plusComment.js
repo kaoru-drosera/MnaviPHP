@@ -59,6 +59,17 @@ function textCheck(){
 
   for(i=0; i<document.form1.length; i++){
     if(isFinite(document.form1.elements[i].value) == false){
+      // ↑「『入力された数値が数字かどうか』を確かめる場合、
+      // isFinite関数か、isNaN関数を使うといいだろう。」
+      // 2つとも関数として使うので、調べたい数値を「囲う」ようにして
+      // 使うのがコツだ。
+
+      // specialThanks:
+      //
+      // 通常の数値かどうかはisNaN関数じゃなくてisFinite関数
+      // http://d.hatena.ne.jp/sandai/20100206/p1
+      // 数値のみ入力可能 【JavaScript 動的サンプル】 - WEBページ作成リファレンス
+      // https://web-designer.cman.jp/javascript_ref/keyboard/onlynum/
 
       switch (document.form1.elements[i].name) {
         case "txtWidth":

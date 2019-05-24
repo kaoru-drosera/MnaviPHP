@@ -1,6 +1,6 @@
 <?php
-  // require('5-6dbconnect(forMac).php');
-  require('5-6dbconnect(forWin).php');
+   require('5-6dbconnect(forMac).php');
+  // require('5-6dbconnect(forWin).php');
 
  ?>
 

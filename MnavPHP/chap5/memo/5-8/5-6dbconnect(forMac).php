@@ -9,6 +9,7 @@
   // }
 
   //   *forMAC
+  try{
     $db = new PDO('mysql:dbname=mydb_bymnaviphp; host=localhost; charset=utf8', 'root', 'root');
 
   } catch (PDOException $e) {

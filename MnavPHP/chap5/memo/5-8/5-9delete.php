@@ -1,5 +1,5 @@
-<?php // require('5-6dbconnect(forMac).php'); ?>
- <?php require('5-6dbconnect(forWin).php'); ?>
+ <?php require('5-6dbconnect(forMac).php'); ?>
+ <?php //require('5-6dbconnect(forWin).php'); ?>
 
 <!DOCTYPE html>
 <html lang="ja">

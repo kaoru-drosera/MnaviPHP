@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
  ?>
-<?php  //require('5-6dbconnect(forMac).php'); ?>
- <?php require('5-6dbconnect(forWin).php'); ?>
+<?php  require('5-6dbconnect(forMac).php'); ?>
+ <?php // require('5-6dbconnect(forWin).php'); ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>

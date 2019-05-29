@@ -89,10 +89,10 @@ $(function(){
 
 
 
-  $(".ul11 [title$=th] , .ul12[title^=f]").css({
-    "background-color":"peru",
-    "color":"white"
-  });
+  // $(".ul11 [title$=th] , .ul12[title^=f]").css({
+  //   "background-color":"peru",
+  //   "color":"white"
+  // });
 
   // クラスをまたいだ指定はなぜかできない。
 

@@ -49,7 +49,7 @@ $(function(){
 
 
   $(".cont4-5_2 input").val("入力してください").css({
-    "color":"red",
+    "color":"darkgray",
     "background-color":"white",
   }).one('focus',function(){
     $(this).val("").css({
@@ -71,7 +71,6 @@ $(function(){
   });
 
  // oneのfunctionからうまくいかなくてよくわからなくて
-
 
 
 

@@ -1,0 +1,84 @@
+.div1,
+.div2{
+  width: 200px;
+  height: 200px;
+  background-color: #f00;
+  display: none;
+}
+.div3,
+.div4{
+  width: 200px;
+  height: 200px;
+  background-color: #00f;
+  display: none;
+}
+.div5,
+.div6{
+  width: 200px;
+  height: 200px;
+  background-color: #0f0;
+  display: none;
+}
+.div7,
+.div8{
+  width: 200px;
+  height: 200px;
+  background-color: peru;
+  display: none;
+}
+.div9,
+.div10{
+  width: 200px;
+  height: 200px;
+  background-color: darkorchid;
+  display: none;
+}
+.dl1,
+.dl2{
+  width: 300px;
+  margin: 50px auto;
+}
+.dl1 dt,
+.dl2 dt{
+  background: #7CADB6;
+  cursor: pointer;
+}
+.dl1 dd,
+.dl2 dd{
+  border: 1px solid #7CADB6;
+  height: 300px;
+  margin: 0;
+}
+
+.imgwrap2 img{
+  display: none;
+}
+
+.anm1 p,
+.anm2inner{
+  width: 800px;
+  height: 267px;
+  margin: 0;
+}
+.anm1,
+.anm2{
+  width: 400px;
+  height: 267px;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.

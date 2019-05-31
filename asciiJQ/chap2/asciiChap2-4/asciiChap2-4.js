@@ -72,7 +72,9 @@ $(function(){
 
  // oneのfunctionからうまくいかなくてよくわからなくて
 
-
+ $(".cont-5 select").change(function(){
+   $(".c5ipwrap span").text($(this).val());
+ });
 
 
 

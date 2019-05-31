@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="asciiChap2-4.5.css" type="text/css">
+  <script src="../jquery-3.4.1.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <form id="form1" action="check.html" method="post">
+    <dl>
+      <dt>お名前<em>*必須</em></dt>
+      <dd><input type="text" name="name"></dd>
+      <dt>性別</dt>
+      <dd>
+        <input type="radio" id="gender_man" name="gender" value="男性">
+        <label for="gender_man">男性</label>
+        <input type="radio" id="gender_women" name="gender" value="女性">
+        <label for="gender_women">女性</label>
+      </dd>
+      <dt>年齢</dt>
+      <dd>
+        <select name="age" id="#age">
+          <option value="">選択してください</option>
+          <option value="10代">10代</option>
+          <option value="20代">20代</option>
+          <option value="30代">30代</option>
+          <option value="40代以上">40代以上</option>
+        </select>
+      </dd>
+      <dt>スキル</dt>
+      <dd>
+        <input type="checkbox" id="HTML" name="HTML" value="HTML">
+        <label for="HTML">HTML</label>
+        <input type="checkbox" id="CSS" name="CSS" value="CSS">
+        <label for="CSS">CSS</label>
+        <input type="checkbox" id="javascript" name="javascript" value="javascript">
+        <label for="javascript">javascript</label>
+        <input type="checkbox" id="PHP" name="PHP" value="PHP">
+        <label for="PHP">PHP</label>
+      </dd>
+      <dt>コメント</dt>
+      <dd>
+        <textarea name="comment" id="" cols="30" rows="10"></textarea>
+      </dd>
+    </dl>
+    <input type="submit" value="送信">
+  </form>
+  <p>名前の入力がない場合、</p>
+  <p>送信を止めた上で</p>
+  <p>スタイル変更とHTML要素追加の設定を適用</p>
+  <hr>
+  <!-- <form id="form2" action="check.html" method="post">
+    <dl>
+      <dt>お名前<em>*必須</em></dt>
+      <dd><input type="text" name="name"></dd>
+      <dt>性別</dt>
+      <dd>
+        <input type="radio" id="gender_man" name="gender" value="男性">
+        <label for="gender_man">男性</label>
+        <input type="radio" id="gender_women" name="gender" value="女性">
+        <label for="gender_women">女性</label>
+      </dd>
+      <dt>年齢</dt>
+      <dd>
+        <select name="age" id="#age">
+          <option value="">選択してください</option>
+          <option value="10代">10代</option>
+          <option value="20代">20代</option>
+          <option value="30代">30代</option>
+          <option value="40代以上">40代以上</option>
+        </select>
+      </dd>
+      <dt>スキル</dt>
+      <dd>
+        <input type="checkbox" id="HTML" name="HTML" value="HTML">
+        <label for="HTML">HTML</label>
+        <input type="checkbox" id="CSS" name="CSS" value="CSS">
+        <label for="CSS">CSS</label>
+        <input type="checkbox" id="javascript" name="javascript" value="javascript">
+        <label for="javascript">javascript</label>
+        <input type="checkbox" id="PHP" name="PHP" value="PHP">
+        <label for="PHP">PHP</label>
+      </dd>
+      <dt>コメント</dt>
+      <dd>
+        <textarea name="comment" id="" cols="30" rows="10"></textarea>
+      </dd>
+    </dl>
+    <input type="submit" value="送信">
+  </form> -->
+
+
+  <hr>
+  <form class="form2" action="chara.html" method="post">
+    <input id="HTML_2" type="checkbox" name="HTML_2" value="HTML_2"></input>
+    <label for="HTML_2">HTML</label>
+    <input id="CSS_2" type="checkbox" name="CSS_2" value="CSS_2"></input>
+    <label for="CSS_2">CSS</label>
+    <input id="javascript_2" type="checkbox" name="javascript_2" value="javascript_2"></input>
+    <label for="javascript_2">javascript</label>
+    <input id="PHP_2" type="checkbox" name="PHP_2" value="PHP_2"></input>
+    <label for="PHP_2">PHP</label>
+  </form>
+
+
+  <p>年齢:
+    <select class="form3" name="age" id="form3">
+      <option>選択してください</option>
+      <option value="10 代">10代</option>
+      <option value="20 代">20代</option>
+      <option value="30 代">30代</option>
+      <option value="40 代以上">40代以上</option>
+    </select>
+  </p>
+    <p>好きなお酒:<input class="f3ip" type="text"></p>
+
+
+  <script src="asciiChap2-4.5.js" charset="utf-8"></script>
+</body>
+</html>

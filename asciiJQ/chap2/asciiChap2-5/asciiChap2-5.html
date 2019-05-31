@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="asciiChap2-5.css" type="text/css">
+  <script src="../jquery-3.4.1.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <button class="but1">MMM</button>
+  <div class="div1"></div><!--  .div1 -->
+  <hr>
+  <button class="but2">MMM</button>
+  <div class="div2"></div><!--  .div1 -->
+  <hr>
+  <button class="but3">MMM</button>
+  <div class="div3"></div><!--  .div1 -->
+  <hr>
+  <button class="but4">MMM</button>
+  <div class="div4"></div><!--  .div1 -->
+  <hr>
+  <button class="but5">MMM</button>
+  <div class="div5"></div><!--  .div1 -->
+  <hr>
+  <button class="but6">show</button><button class="but6_2">hide</button>
+  <div class="div6"></div><!--  .div1 -->
+  <hr>
+  <button class="but7">show</button><button class="but7_2">hide</button>
+  <div class="div7"></div><!--  .div1 -->
+  <hr>
+  <button class="but8">死亡です</button>
+  <div class="div8"></div><!--  .div1 -->
+  <hr>
+  <button class="but9">死亡です</button>
+  <div class="div9"></div><!--  .div1 -->
+
+  <dl class="dl1">
+    <dt>スライドして表示を切り替える</dt>
+    <dd>slideDown()とslideUp()、show()やhide()とは違い、スライド
+    アニメーションで表示非表示を切り替える命令です。</dd>
+  </dl><!--  .dl1 -->
+
+  <dl class="dl2">
+    <dt>スライドして表示を切り替える</dt>
+    <dd>slideDown()とslideUp()、show()やhide()とは違い、スライド
+    アニメーションで表示非表示を切り替える命令です。</dd>
+  </dl><!--  .dl1 -->
+<hr>
+  <div class="imgwrap1">
+    <button id="fadein">表示</button>
+    <button id="fadeout">非表示</button>
+    <p><img src="img/building.jpg" alt="???"></p>
+  </div><!--  .imgwrap1 -->
+  <hr>
+
+  <div class="imgwrap2">
+    <button class="fade100">表示</button>
+    <button class="fade50">半透明</button>
+    <button class="fade0">非表示</button>
+    <p><img src="img/jellyfish.jpg" alt="????"></p>
+  </div><!--  .imgwrap2 -->
+  <hr>
+
+  <div class="anm1"><p><img id="anm1img1" src="img/building.jpg" alt=""><img id="anm1img2" src="img/jellyfish.jpg" alt=""></p></div><!--  .anm1 -->
+  <!-- バカな…HTMLタグの並びが関係するというのか!? -->
+
+  <!-- <div class="anm2">
+    <div class="anm2inner">
+      <img id="anm2img1" src="img/building.jpg" alt="">
+      <img id="anm2img2" src="img/jellyfish.jpg" alt="">
+    </div>
+  </div> -->
+  <!-- ↑やっぱりそうだ…これ行区切ると
+  jqコードが発動しない…！
+ -->
+  <script src="asciiChap2-5.js" charset="utf-8"></script>
+</body>
+</html>

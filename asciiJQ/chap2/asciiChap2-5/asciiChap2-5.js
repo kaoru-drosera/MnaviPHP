@@ -29,6 +29,14 @@ $(document).ready(function(){
     $(".div6").hide("slow");
   });
 
+  $(".but6_t").click(function(){
+    $(".div6_t:not(:animated)").toggle("slow");
+    // .toggle(スピード,コールバック関数);
+
+    // .showと.hideの機能がこれ1つに！
+    // 一見すれば上記2つの上位互換だ！
+  });
+
 
 
 
@@ -39,9 +47,11 @@ $(document).ready(function(){
 
   $(".but7").click(function(){
     $(".div7:not(:animated)").show("slow");
+    // .show(スピード,コールバック関数)
   });
   $(".but7_2").click(function(){
     $(".div7:not(:animated)").hide("slow");
+    // .hide(スピード,コールバック関数);
   });
   // :animatedは「アニメーションしているもの」
   // を選択する。
@@ -55,14 +65,19 @@ $(document).ready(function(){
   $(".dl1 dt").click(function(){
     if($(".dl1 dd").css("display") == "block"){
       $(".dl1 dd:not(:animated)").slideUp("slow");
+      // .slideUp(スピード,コールバック関数);
     }else{
       $(".dl1 dd:not(:animated)").slideDown("slow");
+      // .slideDown(スピード,コールバック関数);
     }
   });
 
 
   $(".dl2 dt").click(function(){
       $(".dl2 dd:not(:animated)").slideToggle("show");
+      // .slideToggle(スピード,コールバック関数);
+      // .slideUpと.slideDownの機能がこれ1つに！
+      // 一見すると後者2つの上位互換だな。
   });
 
   $("#fadein").click(function(){
@@ -114,7 +129,9 @@ $(document).ready(function(){
   // 今はCSSの書き方を知ってからはちょっとだけわかってきた！
 
 
-
+  // 「スピード」の後ろには、終わり際に減速する「swing」
+  // 終わり際まで速さが等倍の「linear」の
+  // 2つの「動き」を設定できるぞ。
 
 
 

@@ -13,7 +13,8 @@
   display: none;
 }
 .div5,
-.div6{
+.div6,
+.div6_t{
   width: 200px;
   height: 200px;
   background-color: #0f0;

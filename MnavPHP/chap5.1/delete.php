@@ -17,27 +17,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <?php
+   <main>
+     <h2>practice</h2>
+     <h3>削除しました</h3>
+     <?php
+      if(isset($_REQUEST['id']) && is_numeric($_REQUEST['id'])){
+        $id = $_REQUEST['id'];
 
-  $id = $_REQUEST['id'];
-  if(!is_numeric($id) || $id <= 0){
-    print('1以上の数字で指定してください');
-    exit();
-  }
+        $memos = $db->prepare('DELETE FROM memos WHERE id=?');
+        $memos->execute(array($id));
+      }
 
-  $memos = $db->prepare('SELECT * FROM memos WHERE id=?');
-  $memos->execute(array($_REQUEST['id']));
-  $memo = $memos->fetch();
+      ?>
+      <pre>
+        <p>メモを削除しました</p>
+        <p><a href="indux.php">戻る</a></p>
+      </pre>
+   </main>
 
-   ?>
-   <article class="">
-     <pre><?php print($memo['memo']); ?></pre>
-
-     <p>
-       <a href="update.php?id=<?php print($memo['id']); ?>">編集する</a>
-       |<a href="delete.php?id=<?php print($memo['id']); ?>">削除する</a>
-       |<a href="indux.php">戻る</a>
-     </p>
-   </article>
 </body>
 </html>

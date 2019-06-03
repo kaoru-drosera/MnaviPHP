@@ -26,7 +26,7 @@
    ?>
   <?php
     $start = 5 * ($page - 1);
-    $memos = $db->prepare('SELECT * FROM memos ORDER BY id LIMIT ?,5');
+    $memos = $db->prepare('SELECT * FROM memos ORDER BY id DESC LIMIT ?,5');
     $memos->bindParam(1, $start, PDO::PARAM_INT);
     $memos->execute();
    ?>

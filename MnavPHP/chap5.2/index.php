@@ -44,7 +44,7 @@
     <?php endwhile; ?>
     <p>
       <?php if($page >= 2): ?>
-        <a href="index.php?page=<?php print($page-1); ?>"><?php print($page-1); ?>ページ目へ</a>
+        <a href="index.php?page=<?php print($page-1); ?>">←　<?php print($page-1); ?>ページ目へ</a>
       <?php endif; ?>
       　|　
       <?php
@@ -53,7 +53,7 @@
       $max_page = floor($count['cnt'] / 5) + 1;
       if($page < $max_page):
        ?>
-       <a href="index.php?page=<?php print($page+1); ?>"><?php print($page+1); ?>ページ目へ</a>
+       <a href="index.php?page=<?php print($page+1); ?>"><?php print($page+1); ?>ページ目へ　→</a>
       <?php endif; ?>
     </p>
 

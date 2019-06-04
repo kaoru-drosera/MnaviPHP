@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Feb 28, 2019 at 06:26 AM
+-- Generation Time: Jun 04, 2019 at 07:30 AM
 -- Server version: 5.7.23
 -- PHP Version: 7.1.22
 
@@ -91,6 +91,36 @@ INSERT INTO `maker` (`id`, `name`, `address`, `tel`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `memos`
+--
+
+CREATE TABLE `memos` (
+  `id` int(11) NOT NULL,
+  `memo` text NOT NULL,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `memos`
+--
+
+INSERT INTO `memos` (`id`, `memo`, `created_at`) VALUES
+(1, '\r\n    テストメッセージ', '2019-03-02 01:18:51'),
+(2, '\r\n    徹夜なうでチャケバクソネミミッミ', '2019-03-02 01:21:11'),
+(3, '\r\n    これは\"メッセージです\"\r\nつってｗｗｗｗｗｗｗ', '2019-03-02 01:21:57'),
+(4, 'おぉほんとに登録できる', '2019-03-02 01:22:23'),
+(5, 'HTMLちょっといじったよ', '2019-03-02 01:23:47'),
+(6, 'ダンガンロンパは終わってくれるよね！？', '2019-03-02 02:30:59'),
+(7, 'aaaa', '2019-03-02 14:30:26'),
+(8, 'ccccc', '2019-03-02 14:31:11'),
+(9, 'やった…', '2019-03-02 14:31:26'),
+(10, 'っっっっっc', '2019-03-02 14:31:38'),
+(11, 'お久しぶりですなぁ', '2019-05-24 10:58:21'),
+(12, 'これはない', '2019-05-24 10:58:47');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `my_item`
 --
 
@@ -114,7 +144,8 @@ INSERT INTO `my_item` (`id`, `maker_id`, `item_name`, `price`, `keyword`, `sales
 (2, 2, 'にんじん', 120, '赤い,甘い,リコピン', 20, '2019-02-27 13:25:12', '2019-02-27 05:18:27'),
 (3, 3, 'さつまいも', 150, 'じゃんけんジャガイモ,紫,栗よりうまい', 16, '0000-00-00 00:00:00', '2019-02-27 05:18:27'),
 (4, 4, 'しょうが', 180, '国産,だけに,日本人', 8, '2018-01-10 00:00:00', '2019-02-27 05:18:27'),
-(5, 1, 'ブルーベリー', 300, '袋入り,青い,眼精疲労,もちろんうまい', 15, '0000-00-00 00:00:00', '2019-02-27 05:18:27');
+(5, 1, 'ブルーベリー', 300, '袋入り,青い,眼精疲労,もちろんうまい', 15, '0000-00-00 00:00:00', '2019-02-27 05:18:27'),
+(6, 1, 'ココナッツ', 500, '甘くはない,堅い,ミルク,ジュース', 0, '2018-01-23 00:00:00', '2018-01-22 15:00:00');
 
 --
 -- Indexes for dumped tables
@@ -130,6 +161,12 @@ ALTER TABLE `carts`
 -- Indexes for table `maker`
 --
 ALTER TABLE `maker`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `memos`
+--
+ALTER TABLE `memos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -155,10 +192,16 @@ ALTER TABLE `maker`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `memos`
+--
+ALTER TABLE `memos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `my_item`
 --
 ALTER TABLE `my_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

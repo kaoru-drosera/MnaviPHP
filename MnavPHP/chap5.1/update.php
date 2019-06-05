@@ -1,7 +1,6 @@
 <?php
   require('re-dbConnect_1.php');
  ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>

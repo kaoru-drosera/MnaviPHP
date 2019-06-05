@@ -19,13 +19,19 @@
 <body>
   <?php
     $id = $_REQUEST['id'];
-    $counts = $db->query('SELECT COUNT(*) AS num FROM memos');
+    $counts = $db->query('SELECT COUNT(id) AS num FROM memos');
     $count = $counts->fetch();
     $max_memo = floor($count['num']) + 1;
+    print($max_memo);
     // 「データベース上にないページIDを選択した時に
     // エラーを吐く機能」を追加した！
     // わーい！ほめてほめてほめてー！
 
+    // 問題が発生した。
+    // 削除して空白になったデータも表示するものとして扱ったまま、
+    // データの総数のみでカウントしようとしたため、
+    // 最新のデータを表示しようとした時
+    // エラーを吐くようになってしまったようだ。
 
     $memos = $db->prepare('SELECT * FROM memos WHERE id=?');
     $memos->execute(array($id));
@@ -41,7 +47,22 @@
    ?>
    <article>
      <pre><?php print($memo['memo']); ?></pre>
+     <?php if($id >= 2): ?>
+     <p>
+       <a href="memo.php?id=<?php print($id-1) ?>">前のページへ</a>
+     <?php endif; ?>
+        |
+    <?php if($id <= $max_memo): ?>
+      <a href="memo.php?id=<?php print($id+1) ?>">次のページへ</a>
+    <?php endif; ?>
+    </p>
+     <p><a href="update.php?id=<?php print($memo['id']) ?>">更新する</a>|<a href="delete.php?id=<?php print($memo['id']) ?>">削除する</a></p>
      <p><a href="index.php">戻る</a></p>
+
+     <!-- これまたindex.phpのコードを参考にして
+     「詳細画面に次/前ページ」
+      を作ってみたよー！
+      ぬははー！褒めろたたえろー！ -->
 
    </article>
 </body>

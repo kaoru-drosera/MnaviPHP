@@ -38,28 +38,24 @@
     $memo = $memos->fetch();
     // print($max_memo);
 
-    if(!is_numeric($id) || $id <= 0){
-      print('１以上の数字を指定してください');
+    if(!is_numeric($id) || $id <= 0 || $id >= $max_memo){
+      print('データベース上にIDとして存在する１以上の数字を指定してください');
       exit();
     }
-    // if(!is_numeric($id) || $id <= 0 || $id >= $max_memo){
-    //   print('データベース上にIDとして存在する１以上の数字を指定してください');
-    //   exit();
-    // }
 
 
    ?>
    <article>
      <?php if(isset($_REQUEST['id']) && is_numeric($_REQUEST['id'])): ?>
      <pre><?php print($memo['memo']); ?></pre>
-     <!-- <?php if($id >= 2): ?>
+     <?php if($id >= 2): ?>
      <p>
        <a href="memo.php?id=<?php print($id-1) ?>">前のページへ</a>
      <?php endif; ?>
         |
     <?php if($id <= $max_memo): ?>
       <a href="memo.php?id=<?php print($id+1) ?>">次のページへ</a>
-    <?php endif; ?> -->
+    <?php endif; ?>
     </p>
      <p><a href="update.php?id=<?php print($memo['id']) ?>">更新する</a>|<a href="delete.php?id=<?php print($memo['id']) ?>">削除する</a></p>
      <p><a href="index.php">戻る</a></p>

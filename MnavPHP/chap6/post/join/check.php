@@ -1,4 +1,6 @@
 <?php
+  require('../../dbconnect.php');
+
   session_start();
 
   if(!isset($_SESSION['join'])){
@@ -28,17 +30,17 @@
     <dl>
       <dt>ニックネーム</dt>
       <dd>
-        <?php echo htmlspecialchars($_SESSION['join']['name'],ENT_QUOTES) ?>
+        <?php echo htmlspecialchars($_SESSION['join']['name'],ENT_QUOTES,'UTF-8'); ?>
       </dd>
       <dt>メールアドレス</dt>
       <dd>
-        <?php echo htmlspecialchars($_SESSION['join']['email'],ENT_QUOTES) ?>
+        <?php echo htmlspecialchars($_SESSION['join']['email'],ENT_QUOTES,'UTF-8'); ?>
       </dd>
       <dt>パスワード</dt>
       <dd>【非表示】</dd>
       <dt>写真など</dt>
       <dd>
-        <img src="../member_picture/<?php echo htmlspecialchars($_SESSION)['join']['name'],ENT_QUOTES ?>" width="100" height="100" alt="">
+        <img src="../member_picture/<?php echo htmlspecialchars($_SESSION['join']['name'],ENT_QUOTES,'UTF-8'); ?>" width="100" height="100" alt="">
       </dd>
     </dl>
     <div><a href="index.php?action=rewrite">&laquo;&nbsp;書き直す</a>|<input type="submit" value="登録する"/></div>

@@ -5,13 +5,6 @@
   session_start();
   require('../../dbconnect.php');
 
-
-  $error = null;
-  // $error['name'] = '';
-  // $error['email'] = '';
-  // $error['password'] = '';
-  // $error['image'] = '';
-
   if(!empty($_POST)){
     // エラー項目の確認
     if($_POST['name'] == ''){
@@ -21,29 +14,12 @@
     if($_POST['email'] == ''){
       $error['email'] = 'blank';
     }
-    if($_POST['password'] < 4){
+    if(strlen($_POST['password']) < 4){
       $error['password'] = 'length';
     }
     if($_POST['password'] == ''){
       $error['password'] = 'blank';
     }
-
-    if(empty($error)){
-      // 画像をアップロードする
-      $image = date('YmdHis').$_FILES['image']['name'];
-      move_uploaded_file($_FILES['image']['name'],'../member_picture'.$image);
-      $_SESSION['join'] = $_POST;
-      $_SESSION['join']['image'] = $image;
-      header('Location: check.php');
-      exit();
-    }
-
-    // 書き直し
-    if($_REQUEST['action'] == 'rewrite'){
-      $_POST = $_SESSION['join'];
-      $error['rewrite'] = true;
-    }
-
     $fileName = $_FILES['image']['name'];
     if(!empty($fileName)){
       $ext = substr($fileName,-3);
@@ -52,7 +28,22 @@
       }
     }
 
+    if(empty($error)){
+      // 画像をアップロードする
+      $image = date('YmdHis').$_FILES['image']['name'];
+      move_uploaded_file($_FILES['image']['tmp_name'],'../member_picture'.$image);
+      $_SESSION['join'] = $_POST;
+      $_SESSION['join']['image'] = $image;
+      header('Location: check.php');
+      exit();
+    }
   }
+  // 書き直し
+  if($_REQUEST['action'] == 'rewrite'){
+    $_POST = $_SESSION['join'];
+    $error['rewrite'] = true;
+  }
+
  ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -76,7 +67,7 @@
     </div>
     <div id="content">
       <p>次にフォームに必要事項をご入力ください。</p>
-      <form action="check.php" methods="post" enctype="multipart/form-data">
+      <form action="" methods="post" enctype="multipart/form-data">
         <dl>
           <dt>ニックネーム<span class="required">必須</span></dt>
           <dd>

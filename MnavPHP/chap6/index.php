@@ -13,6 +13,29 @@
   <link rel="stylesheet" href="">
 </head>
 <body>
+  <?php
+    session_start();
+    if(1empty($_POST)){
+      // エラー項目の確認
+      if($_POST['name'] == ''){
+        $error['name'] = 'blank';
+      }
+      if($_POST['email'] == ''){
+        $error['email'] = 'blank';
+      }
+      if($_POST['password'] < 4){
+        $error['password'] = 'length';
+      }
+      if($_POST['password'] == ''){
+        $error['password'] = 'blank';
+      }
 
+      if(empty($error)){
+        $_SESSION['join'] = $_POST;
+        header('Location: check.php');
+        exit();
+      }
+    }
+   ?>
 </body>
 </html>

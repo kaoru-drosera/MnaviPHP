@@ -1,11 +1,17 @@
 <?php
-
-  require('../../dbconnect.php');
-
   ini_set('display_errors', 1);
-  error_reporting(E_ALL);
+  error_reporting(E_ALL & ~E_NOTICE);
 
   session_start();
+  require('../../dbconnect.php');
+
+
+  $error = null;
+  // $error['name'] = '';
+  // $error['email'] = '';
+  // $error['password'] = '';
+  // $error['image'] = '';
+
   if(!empty($_POST)){
     // エラー項目の確認
     if($_POST['name'] == ''){
@@ -32,6 +38,12 @@
       exit();
     }
 
+    // 書き直し
+    if($_REQUEST['action'] == 'rewrite'){
+      $_POST = $_SESSION['join'];
+      $error['rewrite'] = true;
+    }
+
     $fileName = $_FILES['image']['name'];
     if(!empty($fileName)){
       $ext = substr($fileName,-3);
@@ -54,8 +66,8 @@
   <meta name="author" content="">
   <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.ico">
   <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="../../bootstrap.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <!-- <link rel="stylesheet" href="../bootstrap.min.css"> -->
 </head>
 <body>
   <div id="wrap">
@@ -64,7 +76,7 @@
     </div>
     <div id="content">
       <p>次にフォームに必要事項をご入力ください。</p>
-      <form action="" methods="post" enctype="multipart/form-data">
+      <form action="check.php" methods="post" enctype="multipart/form-data">
         <dl>
           <dt>ニックネーム<span class="required">必須</span></dt>
           <dd>

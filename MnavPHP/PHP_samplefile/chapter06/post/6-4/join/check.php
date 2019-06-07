@@ -15,7 +15,7 @@
     <h1>会員登録</h1>
   </div>
   <div id="content">
-		<form action="" method="post">
+		<form action="thanks.php" method="post">
 		<dl>
 		<dt>ニックネーム</dt>
 		<dd>

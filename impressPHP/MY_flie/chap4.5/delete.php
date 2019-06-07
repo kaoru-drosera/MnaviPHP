@@ -19,7 +19,7 @@
 
       $id = (int) $_GET['id'];
       if(($id < 1) || ($id) > 1000) throw new Exception('ID範囲外');
-      
+
       // データベース接続
       $dbh = new PDO('mysql:host=localhost;dbname=db1_by_impressPHP;charset=utf8',$user,$pass);
       $dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
@@ -40,7 +40,7 @@
     }
     ?>
     <br>
-    <a href="http://localhost:8888/impressPHP/MY_flie/chap4.5/">トップページへ戻る</a>
+    <a href="http://localhost:8888/PHP_Learning_Pool/impressPHP/MY_flie/chap4.5/index.php">トップページへ戻る</a>
 
   </body>
 </html>

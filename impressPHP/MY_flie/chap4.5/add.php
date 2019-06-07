@@ -43,7 +43,7 @@
         }
         ?>
         <br>
-        <a href="http://localhost:8888/impressPHP/MY_flie/chap4.5/">トップページへ戻る</a>
+        <a href="http://localhost:8888/PHP_Learning_Pool/impressPHP/MY_flie/chap4.5/index.php">トップページへ戻る</a>
       </form>
     </body>
   </html>

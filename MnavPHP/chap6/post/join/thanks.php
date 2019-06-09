@@ -18,11 +18,18 @@ require('../../dbconnect.php');
   <meta name="author" content="">
   <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.ico">
   <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="../../bootstrap.min.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <p>ユーザー登録が完了しました</p>
-  <p><a href="../">ログインする</a></p>
+  <div id="wrap">
+    <div id="head">
+      <h1>登録完了</h1>
+    </div><!-- #head  -->
+    <div id="content">
+      <p>ユーザー登録が完了しました</p>
+      <p><a href="../login.php">ログインする</a></p>
+      <p><a href="index.php">戻る</a></p>
+    </div><!-- #content  -->
+  </div><!-- #wrap  -->
 </body>
 </html>

@@ -26,6 +26,15 @@ if(!empty($_POST)){
       $error['image'] = 'type';
     }
   }
+    // 重複アカウントのチェック
+    if(empty($error)){
+      $member = $db->prepare('SELECT COUNT(*) AS cnt FROM members WHERE email=?');
+      $member->execute(array($_POST['email']));
+      $record = $member->fetch();
+      if($record['cnt'] > 0){
+        $error['email'] = 'duplicate';
+      }
+    }
 
     if(empty($error)){
       // 画像をアップロードする
@@ -36,6 +45,7 @@ if(!empty($_POST)){
       header('Location: check.php');
       exit();
     }
+
   }
   // 書き直し
   if($_REQUEST['action'] == 'rewrite'){
@@ -80,6 +90,9 @@ if(!empty($_POST)){
             <input type="text" class="" name="email" size="35" maxlength="225" value="<?php echo htmlspecialchars($_POST['email'],ENT_QUOTES, 'UTF-8'); ?>">
             <?php if($error['email'] == 'blank'): ?>
               <p class="error">* メールアドレスを入力してください</p>
+            <?php endif; ?>
+            <?php if($error['email'] == 'duplicate'): ?>
+              <p class="error">* 指定されたメールアドレスは既に登録されています</p><!--  .error -->
             <?php endif; ?>
           </dd>
           <dt>パスワード<span class="required">必須</span></dt>

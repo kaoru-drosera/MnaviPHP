@@ -1,8 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL & ~E_NOTICE);
 session_start();
-require('../../dbconnect.php');
+require('../dbconnect.php');
+
 if (!isset($_SESSION['join'])) {
 header('Location: index.php');
 exit();
@@ -14,7 +13,7 @@ if (!empty($_POST)) {
 			$_SESSION['join']['name'],
 			$_SESSION['join']['email'],
 			sha1($_SESSION['join']['password']),
-			$_SESSION['join']['image'],
+			$_SESSION['join']['image']
 		));
 		unset($_SESSION['join']);
 		header('Location: thanks.php');

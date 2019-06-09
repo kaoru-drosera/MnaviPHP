@@ -1,9 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL & ~E_NOTICE);
+require('../dbconnect.php');
 
 session_start();
-require('../../dbconnect.php');
 if (!empty($_POST)) {
 	// エラー項目の確認
 	if ($_POST['name'] == '') {
@@ -99,8 +97,7 @@ $error['rewrite'] = true;
 			<?php endif; ?>
 		</dd>
 		<dt>写真など</dt>
-		<dd>
-			<input type="file" name="image" size="35" />
+		<dd><input type="file" name="image" size="35" />
 			<?php if ($error['image'] == 'type'): ?>
 			<p class="error">* 写真などは「.gif」または「.jpg」の画像を指定してください
 			</p>

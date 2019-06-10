@@ -47,6 +47,10 @@ if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
     $table = $response->fetch();
     $message = '@'.$table['name'].'  '.$table['message'];
   }
+  // htmlspecialcharsのショートカット
+  function h($value){
+    return htmlspecialchars($value,ENT_QUOTES);
+  }
 
  ?>
 <!DOCTYPE html>
@@ -64,6 +68,11 @@ if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <style type="text/css">
+    a{
+      text-decoration: none;
+    }
+  </style>
   <div id="wrap">
     <div id="head">
       <h1>ひとこと掲示板</h1>
@@ -71,10 +80,10 @@ if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
     <div id="content">
       <form action="index.php" method="post">
         <dl>
-          <dt><?php echo htmlspecialchars($member['name'], ENT_QUOTES); ?>さん、メッセージをどうぞ</dt>
+          <dt><?php echo h($member['name']); ?>さん、メッセージをどうぞ</dt>
           <dd>
-      		<textarea name="message" cols="50" rows="5"><?php echo htmlspecialchars($message, ENT_QUOTES); ?></textarea>
-          <input type="hidden" name="reply_post_id" value="<?php echo htmlspecialchars($_REQUEST['res'], ENT_QUOTES); ?>">
+      		<textarea name="message" cols="50" rows="5"><?php echo h($message); ?></textarea>
+          <input type="hidden" name="reply_post_id" value="<?php echo h($_REQUEST['res']); ?>">
       		</dd>
         </dl>
         <div>
@@ -84,9 +93,13 @@ if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
 
     <?php foreach($posts as $post): ?>
       <div class="msg">
-        <img src="member_picture/<?php echo htmlspecialchars($post['picture'],ENT_QUOTES); ?>" alt="<?php echo htmlspecialchars($post['name'],ENT_QUOTES); ?>" witdh="48" height="48">
-        <p><?php echo htmlspecialchars($post['message'],ENT_QUOTES); ?><span class="name">(<?php echo htmlspecialchars($post['name'],ENT_QUOTES); ?>)</span>[<a href="index.php?res=<?php echo htmlspecialchars($post['id'],ENT_QUOTES); ?>">返信</a>]</p>
-        <p class="day"><?php echo htmlspecialchars($post['created'],ENT_QUOTES); ?></p>
+        <img src="member_picture/<?php echo h($post['picture']); ?>" alt="<?php echo h($post['name']); ?>" witdh="48" height="48">
+        <p><a href="view.php?id=<?php echo h($post['id']) ?>"><?php echo h($post['message']); ?></a><span class="name">(<?php echo h($post['name']); ?>)</span>[<a href="index.php?res=<?php echo h($post['id']); ?>">返信</a>]</p>
+        <p class="day"><?php echo h($post['created']); ?>
+          <?php if($post['reply_post_id'] > 0): ?>
+            <a href="view.php?id=<?php echo h($post['reply_post_id']); ?>">返信元のメッセージ</a>
+          <?php endif; ?>
+        </p>
       </div><!--  .msg -->
     <?php endforeach; ?>
     </div><!-- #content  -->

@@ -37,9 +37,27 @@ if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
   		header('Location: index.php'); exit();
   	}
   }
-  // 投稿を取得する
-  $posts = $db->query('SELECT m.name, m.picture, p.* FROM members m, posts p WHERE m.id=p.member_id ORDER BY p.created DESC');
 
+
+  // 投稿を取得する
+  $page = $_REQUEST['page'];
+  if($page == ''){
+    $page = 1;
+  }
+  $page = max($page, 1);
+
+  // 最終ページを取得する
+  $counts = $db->query('SELECT COUNT(*) AS cnt FROM posts');
+  $cnt = $counts->fetch();
+  $maxPage = ceil($cnt['cnt'] / 5);
+  // ↑ceilは小数点切り上げ。
+  $page = min($page, $maxPage);
+
+  $start = ($page - 1) * 5;
+
+  $posts = $db->prepare('SELECT m.name, m.picture, p.* FROM members m, posts p WHERE m.id=p.member_id ORDER BY p.created DESC LIMIT ?,5');
+  $posts->bindParam(1, $start, PDO::PARAM_INT);
+  $posts->execute();
   // 返信の場合
   if(isset($_REQUEST['res'])){
     $response = $db->prepare('SELECT m.name, m.picture, p.* FROM members m, posts p WHERE m.id=p.member_id and p.id=? ORDER BY p.created DESC');
@@ -84,6 +102,7 @@ if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
       <h1>ひとこと掲示板</h1>
     </div><!-- #head  -->
     <div id="content">
+      <div style="text-align: right;"><a href="logout.php">ログアウト</a></div>
       <form action="index.php" method="post">
         <dl>
           <dt><?php echo h($member['name']); ?>さん、メッセージをどうぞ</dt>
@@ -111,6 +130,18 @@ if(isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()){
         </p>
       </div><!--  .msg -->
     <?php endforeach; ?>
+    <ul class="paging">
+      <?php if($page > 1){ ?>
+      <li><a href="index.php?page=<?php print($page - 1) ?>">前のページへ</a></li>
+      <?php } else { ?>
+      <li>前のページへ</li>
+      <?php } ?>
+      <?php if($page < $maxPage){ ?>
+      <li><a href="index.php?page=<?php print($page + 1) ?>">次のページへ</a></li>
+      <?php } else { ?>
+      <li>次のページへ</li>
+      <?php } ?>
+    </ul><!--  .paging -->
     </div><!-- #content  -->
   </div><!-- #wrap  -->
 </body>

@@ -46,6 +46,7 @@ if(!empty($_POST)){
       exit();
     }
 
+
   }
   // 書き直し
   if($_REQUEST['action'] == 'rewrite'){

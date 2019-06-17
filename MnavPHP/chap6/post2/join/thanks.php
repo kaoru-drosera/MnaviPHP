@@ -5,7 +5,7 @@
   session_start();
 
   function h($value){
-    return htmlspecialchars($value);
+    return htmlspecialchars($value,ENT_QUOTES);
   }
 
  ?>

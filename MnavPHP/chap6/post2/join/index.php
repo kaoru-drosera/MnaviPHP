@@ -5,7 +5,7 @@
   session_start();
 
   function h($value){
-    return htmlspecialchars($value);
+    return htmlspecialchars($value,ENT_QUOTES);
   }
 
   if(!empty($_POST)){
@@ -53,7 +53,9 @@
       // ↑画像をアップロードする
       $image = date('YmdHis').$_FILES['image']['name'];
       // 日付を指定したのは、重複を防ぐため。細かい時刻を定めることで、ほぼ完全に重複しなくなる。
-      move_uploaded_file($_FILES['image']['tmp_name'].'../member_picture'.$image);
+      move_uploaded_file($_FILES['image']['tmp_name'],'../member_picture/'.$image);
+
+      // move_uploaded_file(コピー元,'コピー先);
       // 画像をアップロードする　ここまで
 
       $_SESSION['join'] = $_POST;

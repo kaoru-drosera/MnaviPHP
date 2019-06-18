@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>引用　脱jQ</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="" type="text/css">
+</head>
+<style type="text/css">
+  *{
+    margin: 0;
+  }
+  body{
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "sans-serif";
+  }
+  div{
+    /* width: 150px; */
+    font-size: 12px;
+    padding: 10px 20px
+  }
+  .wrap{
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px;
+  }
+  .wrapinner{
+    margin: auto;
+    float: left;
+    padding: 0;
+  }
+  .clearfix::after{
+    content: '';
+    clear: both;
+    display: block;
+  }
+  .container{
+    width: 800px;
+    margin: 0 auto;
+    border: 1px solid #000;
+  }
+  .pwrap{
+    float: left;
+    margin: 0 2px 0;
+    background-color: #000;
+    color: #FFF;
+  }
+  h1{
+    /* float: left; */
+    text-align: left;
+  }
+</style>
+<body>
+  <div class="wrap clearfix">
+    <h1 class="clearfix">outJQでマウスオン</h1>
+    <div class="wrapinner cleafix">
+        <div class="pwrap" id="p1" onMouseOver="dispItem('over','p1')" onMouseOut="dispItem('out','p1')">大学案内</div>
+        <div class="pwrap" id="p2" onMouseOver="dispItem('over','p2')" onMouseOut="dispItem('out','p2')">学域・学部・大学院</div>
+        <div class="pwrap" id="p3" onMouseOver="dispItem('over','p3')" onMouseOut="dispItem('out','p3')">教育研究</div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="lib.js"></script>
+</body>
+</html>

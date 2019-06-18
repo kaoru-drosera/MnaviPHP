@@ -31,8 +31,8 @@
   }
   .wrapinner{
     margin: auto;
-    float: left;
     padding: 0;
+    display: inline-block;
   }
   .clearfix::after{
     content: '';
@@ -52,13 +52,12 @@
   }
   h1{
     /* float: left; */
-    text-align: left;
   }
 </style>
 <body>
   <div class="wrap clearfix">
     <h1 class="clearfix">outJQでマウスオン</h1>
-    <div class="wrapinner cleafix">
+    <div class="wrapinner clearfix">
         <div class="pwrap" id="p1" onMouseOver="dispItem('over','p1')" onMouseOut="dispItem('out','p1')">大学案内</div>
         <div class="pwrap" id="p2" onMouseOver="dispItem('over','p2')" onMouseOut="dispItem('out','p2')">学域・学部・大学院</div>
         <div class="pwrap" id="p3" onMouseOver="dispItem('over','p3')" onMouseOut="dispItem('out','p3')">教育研究</div>
@@ -74,7 +73,7 @@
 
 
 
-  
+
   <script src="lib.js"></script>
 </body>
 </html>

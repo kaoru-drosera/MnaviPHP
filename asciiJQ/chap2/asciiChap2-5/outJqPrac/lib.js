@@ -13,3 +13,6 @@ function dispItem(mode, id){
     }
     // 脱jQueryはfunctionが肝心、ということだろう。
 }
+
+// 脱jQは多分ここが詳しいよー！!
+// https://q-az.net/without-jquery-animate-stop/

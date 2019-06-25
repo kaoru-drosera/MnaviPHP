@@ -45,9 +45,98 @@ changeColor("5th","blue");
 
 const div = document.getElementById('wrap');
 const result = div.getElementsByClassName('test sample')[0].style.color = "peru";
-// このように、「複数クラスを持つもの」はこうすれば指定できるようだ。
+// このように、「1タグに複数クラスを持つもの」はこうすれば指定できるようだ。
+
+
+// 「こんどこそ！クラス全体に適応」
+// 引用
+// https://q-az.net/none-jquery-class-tab/
+var myClass = document.getElementsByClassName('yabai');
+for(var i = 0; i < myClass.length; i++){
+  myClass[i].innerHTML = "ヤバイヤバイヤバヤバイヤバイヤバイヤバヤバイヤバイヤバイヤバヤバイヤバイヤバイヤバヤバイ";
+  myClass[i].style.color = "purple";
+  myClass[i].style.fontWeight = "bold";
+}
+// 引用ここまで。
+// これで、javaScriptの「クラスやidやタグ問わず『1つのタグ』しか取得できない」
+// 仕組みで、「クラスを持つタグ全てに変更を適用」が可能になった。
+// もしこれを「X番目以降、奇数偶数…」といった条件をつけるなら
+// for関数とif関数を併用していく可能性があるのだろうな。
+
+// 以下が公式だろうか。
+// var クラス変数 = document.getElements…('クラス名');
+// for(var i = 0; i < クラス変数.length; i++){
+//   クラス変数[i].…
+//   …
+//   ↑「クラス変数[i].」は1つの設定ごとに
+//   その都度1つ打ち込んでいく必要がある。
+// }
+// 公式ここまで
+
+
+// 複数クラスを指定して書く方法も見つかった。
+// ヤバすぎだろ、q-az!
+// それが「querySelectorAll()」だ。
+
+// var myClass = document.querySelectorAll(".class1, .class2");
+// for (var i = 0; i < myClass.length; i++) {
+  //     myClass[i].innerHTML = "おはよう";
+  //     ↑htmlの中身は、innerHTMLというコードを使って指定できるようだ。
+  // }
 
 // 引用ここまで
+
+// var mySelectAll = document.querySelectorAll(".yabatanienn, .yannbaru");
+// var mySelectAll = document.querySelectorAll(".i12wrapinner2 .doc2_2, .i12wrapinner");
+// ↑以上コードなら成功する。
+// 大きなタグ名を一度に囲う、という単純なものに限るのだろうか？
+
+
+
+var mySelectAll = document.querySelectorAll(".ul5-2 .i26th, .ul5-3 .i28th, #test3");
+for(var i = 0; i < mySelectAll.length; i++){
+  mySelectAll[i].style.color = "orange";
+}
+// あれ…？「タグ内の要素」にも適応できた。
+// なんでだー…？
+// ひとつ言えるのは、「クラス名の先頭を数字にすると失敗する」ことぐらい。
+
+// →成功だ！(たぶん)
+// 理由がわかった。今までうまくいかなかったのは、
+// 「クラス名の先頭が数字」だったから(29th,31th、など)だった。
+// 「クラス名の先頭を数字にしない」さえ守れば、問題なく使えるようだ！
+// …そうそう。末尾に「,」などを置きっぱなしにしないこと。
+// ↓以下のコードだと失敗するぞ。
+// var ul525th = document.querySelectorAll('.ul5-4 .i27th, .ul5-4 .i25th,');
+// ↑以上のコードだと失敗するぞ。
+
+// ただし、「特定のクラス一つ」などで指定する場合には個別に
+// 「getElementsByClassName」のようなタグを使い分ける必要があるぞ。
+var i26th = document.getElementsByClassName('i26th');
+for(var i = 0; i < i26th.length; i++){
+  i26th[i].style.backgroundColor = "green";
+  i26th[i].style.color = "white";
+  i26th[i].innerHTML = "DTDTDTDTDTDTDTDTDTDTDTDTDTDTDTDTDTDTDTDTDT";
+}
+// ↑にしてもコレすごいね！
+// ほとんどjQの$('')のクラス指定と同感覚で使えるし、
+// コードの構成も単純で、理解も(…たぶん)しやすい！
+
+// …残念。「タグ内のクラスを『1つだけ』」指定する方法はない。
+// querySelectorAllを使おうにも、必ず2つ以上指定する必要があるようだ。
+// ↓証拠に、以下コードでは発動しない。
+var ul525th = document.querySelectorAll('.ul5-4 .i26th');
+for(var i = 0; i < ul525th.length; i++){
+  ul525th[i].style.backgroundColor = "purple";
+  ul525th[i].style.color = "white";
+}
+// ↑以上コードでは発動しない…
+// …あれっ？できた…
+// …ということで、「タグ内のクラス」を使う時には
+// まずquerySelectorAllを使うようにしましょう！
+
+
+
 
 
 // // 複数IDを指名し、指定した要素の集合を返す。

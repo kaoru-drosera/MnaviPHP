@@ -251,4 +251,15 @@ for(var i=0; i<myClassX6.length; i++){
   myClassX6[i].innerHTML = "変えたよん";
 }
 
+var myClassX7 = document.querySelectorAll('.ulx13 [title=first], .ulx13 [title=sixth]');
+for(var i=0; i<myClassX7.length; i++){
+  myClassX7[i].style.backgroundColor = "black";
+  myClassX7[i].style.color = "white";
+}
+
+
+
+
+
+
 ;

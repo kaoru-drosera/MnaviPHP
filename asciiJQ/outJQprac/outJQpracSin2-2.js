@@ -75,6 +75,15 @@ for(var i=0; i<myClass3_1.length; i++){
   },false);
 }
 
+var myClass4_1 = document.querySelectorAll('.dv4 .dv4btn');
+var myClass4_2 = document.querySelectorAll('.dv4 .first');
+for(var i=0; i<myClass4_1.length; i++){
+  myClass4_1[i].addEventListener('click',function(){
+    for(var i=0; i<myClass4_2[i].length; i++){
+      myClass4_2[i].textContent = "かえますやんか";
+    }
+  })
+}
 
 
 

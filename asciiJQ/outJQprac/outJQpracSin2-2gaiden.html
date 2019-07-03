@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="" type="text/css">
+  <style>
+
+     body{
+         background: #e0e0e0;
+         text-align: center;
+         font-size: 16px;
+         font-family: Arial,sans-serif;
+     }
+
+     #result{
+         font-weight: bold;
+         font-size:32px;
+         margin: 60px auto;
+         color:#00aaff;
+         text-shadow: 0 1px 0 rgba(255,2555,255,0.5);}
+
+     #btn{
+         margin:0 auto;
+         width: 200px;
+         padding: 10px;
+         color:#fff;
+         border-radius: 5px;
+         background: #0af;
+         /* box-shadow: 4px 4px 4px #08c; */
+         box-shadow: 0 4px 0 #08c;
+         cursor:pointer;
+     }
+
+     #btn:hover{
+         opacity: 0.5;
+     }
+
+ </style>
+
+ <script>
+ // 以下のコードでclickでtoggleじみたことができるようになるようだ。
+ // …原理はわからない。
+ (function(){
+     // 'use strict';
+     // ↑厳格モード。
+     // これまでエラーにならなかったものがエラーになるため、
+     // 潜在的な問題に対処しやすくなるほか、
+     // 読み込みが速くなる利点があるようだ。
+
+     var isStarted = false;
+
+     var result = document.getElementById('result');
+     var btn = document.getElementById('btn');
+
+     document.addEventListener("DOMContentLoaded", function(){
+         document.getElementById('btn').addEventListener('click', function(){
+             if(!isStarted){
+                 isStarted = true;
+                 this.innerHTML = 'STOP';
+             }else{
+                 isStarted = false;
+                 this.innerHTML = 'START';
+             }
+         });
+     }, false);
+    })();
+    // ↑functionを閉じた後には必ず「()」がいるようだ。
+    // そうしないと作動しなくなる。
+ </script>
+</head>
+<body>
+  <div id = "result">Stop at 00:05</div>
+    <div id = "btn">START</div>
+  <!-- https://teratail.com/questions/24714 -->
+</body>
+</html>

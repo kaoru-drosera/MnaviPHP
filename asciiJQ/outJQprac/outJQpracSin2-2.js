@@ -65,6 +65,11 @@ for(var i=0; i<myFirstInDv1.length; i++){
 // [i]を使わないとエラーになる。
 // 何番目のクラスなのかjsが判別できないからだ。
 
+
+
+
+// 要素を書き換え
+
 var myClass3_1 = document.querySelectorAll('.dv3 .dv3btn');
 var myClass3_2 = document.querySelectorAll('.dv3 .first');
 for(var i=0; i<myClass3_1.length; i++){
@@ -79,11 +84,94 @@ var myClass4_1 = document.querySelectorAll('.dv4 .dv4btn');
 var myClass4_2 = document.querySelectorAll('.dv4 .first');
 for(var i=0; i<myClass4_1.length; i++){
   myClass4_1[i].addEventListener('click',function(){
-    for(var i=0; i<myClass4_2[i].length; i++){
+    for(var i=0; i<myClass4_2.length; i++){
       myClass4_2[i].textContent = "かえますやんか";
     }
-  })
+  },false);
 }
+
+var myClass5_1 = document.querySelectorAll('.dv5 .dv5btn');
+var myClass5_2 = document.querySelectorAll('.dv5 .first');
+for(var i=0; i<myClass5_1.length; i++){
+  myClass5_1[i].addEventListener('click',function(){
+    for(var i=0; i<myClass5_2.length; i++){
+      myClass5_2[i].value = 'いれましたしぃ…';
+    }
+  },false);
+}
+
+
+// 要素を取得
+var myClass6_1 = document.querySelectorAll('.dv6 .dv6btn');
+var myClass6_2 = document.querySelectorAll('.dv6 .first');
+var myClass6_3 = document.querySelectorAll('.dv6 .second');
+var myClass6_2_2 = document.getElementsByClassName('ail2');
+var myClass6_3_2 = document.getElementsByClassName('foil2');
+for(var i=0; i<myClass6_1.length; i++){
+  myClass6_1[i].addEventListener('click',function(){
+    for(var i=0; i<myClass6_2.length; i++){
+      myClass6_2[i].textContent = myClass6_3[0].textContent;
+      // ↑取得したい要素には必ず番号を入れること。
+      // 「1つだけ！」という場合にも[0]を入れること
+    }
+  },false);
+}
+
+var myClass8_1 = document.querySelectorAll('.dv8 .dv8btn');
+var myClass8_2 = document.querySelectorAll('.dv8 .first');
+var myClass8_3 = document.querySelectorAll('.dv8 .dv8fm');
+var myClass8_4 = document.querySelectorAll('.dv8 .second');
+for(var i=0; i<myClass8_1.length; i++){
+  myClass8_1[i].addEventListener('click',function(){
+    for(var i=0; i<myClass8_2.length; i++){
+      myClass8_2[i].textContent = myClass8_3[0].value;
+    }
+  },false);
+}
+// ウォホァハァッハァァーー！！
+// jsからフォームの値を受け取れるようになったぞ！
+
+// 要は、
+// document.querySelectorAll('')[X].value = フォームの値を受け取る
+// document.querySelectorAll('')[X].textContent = テキストを受け取る
+// document.querySelectorAll('')[X].innerHTML = HTMLを受け取る
+// [X]には数字を入れる。これで「X番目」を表す。
+// querySelectorAll('')後の[X]は入れ忘れるとエラーを吐くので必ず。
+// といった感じになるのかな
+
+
+// 「前に挿入・後ろに挿入」編
+// insertBefore()
+var myClassY1 = document.querySelectorAll('.dvv2 .dvv2p');
+var myNav = document.querySelectorAll('.dvv2 .dvv2Strong');
+var myBefore = document.querySelectorAll('.dvv2p')[0];
+for(var i=0; i<myNav.length; i++){
+  myNav[i].addEventListener('click',function(){
+    for(var i=0; i<myNav.length; i++){
+      myNav[i].parentNode.insertBefore(myBefore.cloneNode(true),myNav[i]);
+      // insertBeforeのまま使えるが、jsでは「親を指定する」必要があるのだ。
+      // そのために、parentNode.querySelectorAll('')…で「親要素」が指定できるぞ。
+      // .cloneNode(true)は「複製を有効にする」ためのもの。
+
+    }
+  },false);
+}
+
+// .append()
+var myClassY2 = document.querySelectorAll('.dvv3 .dvv3p');
+var myHeader = document.querySelectorAll('.dvv3p');
+var myNav2 = document.querySelectorAll('.dvv3 .dvv3Strong');
+for(var i=0; i<myNav2.length; i++){
+  myNav2[i].addEventListener('click',function(){
+    for(var i=0; i<myHeader.length; i++){
+      myHeader[i].appendChild(myNav2.cloneNode(true))
+    }
+  },false);
+}
+
+// for(var i=0; i<myNav2.length; i++){
+//   myNav2[i].appendChild(myNav2.cloneNode(true))
+// }
 
 
 
@@ -92,3 +180,7 @@ for(var i=0; i<myClass4_1.length; i++){
 // https://q-az.net/without-jquery-on-off/
 // https://teratail.com/questions/24714
 // 都合上、click(on)も並行して学習することに。
+
+// そして
+// https://q-az.net/none-jquery-insertbefore-append/
+// insertBefore(),append()

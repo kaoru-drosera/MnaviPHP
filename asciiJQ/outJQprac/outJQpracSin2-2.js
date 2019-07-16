@@ -120,7 +120,7 @@ for(var i=0; i<myClass6_1.length; i++){
 var myClass8_1 = document.querySelectorAll('.dv8 .dv8btn');
 var myClass8_2 = document.querySelectorAll('.dv8 .first');
 var myClass8_3 = document.querySelectorAll('.dv8 .dv8fm');
-var myClass8_4 = document.querySelectorAll('.dv8 .second');
+// var myClass8_4 = document.querySelectorAll('.dv8 .second');
 for(var i=0; i<myClass8_1.length; i++){
   myClass8_1[i].addEventListener('click',function(){
     for(var i=0; i<myClass8_2.length; i++){

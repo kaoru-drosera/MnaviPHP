@@ -157,21 +157,30 @@ for(var i=0; i<myNav.length; i++){
   },false);
 }
 
+
 // .append()
+'use strict'
 var myClassY2 = document.querySelectorAll('.dvv3 .dvv3p');
-var myHeader = document.querySelectorAll('.dvv3p');
-var myNav2 = document.querySelectorAll('.dvv3 .dvv3Strong');
-for(var i=0; i<myNav2.length; i++){
-  myNav2[i].addEventListener('click',function(){
+var myHeader = document.querySelectorAll('.dvv3 .dvv3p');
+var myNav2 = document.querySelectorAll('.dvv3 .dvv3Strong')[0];
+for(var j=0; j<myClassY2.length; j++){
+  myClassY2[j].addEventListener('click',function(){
     for(var i=0; i<myHeader.length; i++){
-      myHeader[i].appendChild(myNav2.cloneNode(true))
+      myHeader[i].appendChild(myNav2.cloneNode(true));
     }
   },false);
 }
+  // ↑コード自体は効いてくれたようだ。
+  // ただclick機能に問題があったのかな。
+  //
+  // ↑問題解決！
+  // どうやらおなじクラス名でも
+  // 「click機能を発動させるもの」と
+  // 「要素を増殖させる目印となる『親』」で
+  // 別々にクラスを用意する必要があったようだ。
 
-// for(var i=0; i<myNav2.length; i++){
-//   myNav2[i].appendChild(myNav2.cloneNode(true))
-// }
+
+
 
 
 

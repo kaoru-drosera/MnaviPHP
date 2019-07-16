@@ -139,12 +139,20 @@ for(var i=0; i<myClass8_1.length; i++){
 // querySelectorAll('')後の[X]は入れ忘れるとエラーを吐くので必ず。
 // といった感じになるのかな
 
+// 要は、「[0]」で必ず「1番目」として指定できるよう、
+// 変数は「この1つしかない！」となるように
+// 設定すればいいのだろうか。
+
+
 
 // 「前に挿入・後ろに挿入」編
 // insertBefore()
 var myClassY1 = document.querySelectorAll('.dvv2 .dvv2p');
+// ↑増やしたい項目を設定
 var myNav = document.querySelectorAll('.dvv2 .dvv2Strong');
+// ↑どこをクリックすれば発動するかをここで設定
 var myBefore = document.querySelectorAll('.dvv2p')[0];
+// ↑親要素(?)を設定。この場合「.dvv2pの1番目」がそれにあたるか。
 for(var i=0; i<myNav.length; i++){
   myNav[i].addEventListener('click',function(){
     for(var i=0; i<myNav.length; i++){
@@ -152,7 +160,10 @@ for(var i=0; i<myNav.length; i++){
       // insertBeforeのまま使えるが、jsでは「親を指定する」必要があるのだ。
       // そのために、parentNode.querySelectorAll('')…で「親要素」が指定できるぞ。
       // .cloneNode(true)は「複製を有効にする」ためのもの。
-
+      // insertBefore()公式
+      // B.parentNode.insertBefore(A,B);
+      // ↑B=増やしたいもの？
+      // 　A=親要素？
     }
   },false);
 }

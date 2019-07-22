@@ -14,6 +14,7 @@
 </head>
 <body>
   <div class="main-contents">
+    <h3>print、print_rで出力</h3>
     <p>複数の値を出力するには、「echo "文字列","文字列",変数…」</p>
     <?php
     $thord = 40;
@@ -50,5 +51,26 @@
      </pre>
      <p>『＜pre＞＜/pre＞』で囲うことで、改行付きで表示できるぞ！</p>
   </div><!--  .main-contents -->
+  <div class="main-contents">
+    <h3>var_dumpで出力</h3>
+    <p>var_dump()を使うことで変数の値を確認できる。</p>
+    <p>print_r()では「NULLと論理値を出力できない」ため、バグの発見では「var_dump()」を使うことが多いぞ。</p>
+    <pre>
+      <?php
+      $msg = "おはよう";
+      $colors = array("red","blue","green");
+      $now = new Datetime();
+      $points = 45;
+      $isPass = ($points > 80);
+      $userName;
+      var_dump($msg);
+      var_dump($colors);
+      var_dump($now);
+      var_dump($points); // int(45)
+      var_dump($isPass); // bool(false)
+      var_dump($userName); // NULL
+      ?>
+    </pre>
+  </div>
 </body>
 </html>

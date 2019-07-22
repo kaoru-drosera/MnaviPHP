@@ -10,7 +10,7 @@ error_reporting(E_ALL & ~E_NOTICE);
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>定数</title>
+  <title>論理式？</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="author" content="">
@@ -57,7 +57,35 @@ error_reporting(E_ALL & ~E_NOTICE);
     print("「標準値」を設定することができる。"); echo "<br>";
     echo "<br>";
 
+    $test1 = TRUE;
+    $test2 = FALSE;
+    $hantei8 = ($test1 and $test2);
+    $hantei9 = ($test1 or $test2);
+    var_dump($hantei8); echo "<br>";
+    var_dump($hantei9); echo "<br>";
+    print("&& や || は、それぞれ or と and で代用できる。"); echo "<br>";
+    print("ただし、必ず()でくくること。"); echo "<br>";
+    echo "<br>";
 
+    // 誤ったコード
+    $test3 = TRUE;
+    $test4 = FALSE;
+    $hantei10 = $test3 and $test4;
+    $hantei11 = $test3 or $test4;
+    var_dump($hantei10); echo "<br>";
+    var_dump($hantei11); echo "<br>";
+    print("()でくくらない場合、andないしはorの範囲が適応されなくなり、"); echo "<br>";
+    print("先頭だけが変数に入ることになる。"); echo "<br>";
+    echo "<br>";
+
+    $skullA = mt_rand(0,50); //0から50までの乱数を作るよ
+    $skullB = mt_rand(0,50);
+    if($skullA > $skullB){
+      $bigger = $skullA;
+    } else {
+      $bigger = $skullB;
+    }
+    echo "大きな値は{$bigger}。\$skullAは{$skullA}、\$skullBは{$skullB}";  echo "<br>";
 
      ?>
   </div>

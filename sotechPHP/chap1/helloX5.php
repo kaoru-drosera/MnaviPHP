@@ -83,20 +83,20 @@ require_once("helloSinX3.5_Staff.php");
     </pre>
     <pre>
       <?php
-        // 2つの関数があるDateToolトレイト
-        trait DateTool{
-          // DateTimeを年月日の書式で返す
-          public function ymdString($date){
-            $dateString = $date->format('Y年m月d日');
-            return $dateString;
-          }
-
-          // 指定に数後の年月日で返す
-          public function addYmdString($date, $days){
-            $date->add(new DateInterval("P{$day}D"));
-            return $this->ymdString($date);
-          }
-        }
+        // // 2つの関数があるDateToolトレイト
+        // trait DateTool{
+        //   // DateTimeを年月日の書式で返す
+        //   public function ymdString($date){
+        //     $dateString = $date->format('Y年m月d日');
+        //     return $dateString;
+        //   }
+        //
+        //   // 指定に数後の年月日で返す
+        //   public function addYmdString($date, $days){
+        //     $date->add(new DateInterval("P{$day}D"));
+        //     return $this->ymdString($date);
+        //   }
+        // }
        ?>
     </pre>
     <p>DateToolトレイトには、ymdString()とaddYmdString()の2つの関数が定義してある。</p>
@@ -116,6 +116,95 @@ require_once("helloSinX3.5_Staff.php");
     <p><strong>外部ファイルのトレイトを使う場合は、先にrequire_once()を読み込んでおく</strong>ように。</p>
     <p class="pdg"></p>
     <h3>DateToolトレイトを利用するMilkクラスを定義する</h3>
+    <p>では、先に作ったDateToolトレイトを利用するMilkクラスを作ろう。</p>
+    <p>Milkクラスではuse DateToolでDateToolトレイトの利用を宣言しておき、</p>
+    <p>コンストラクタで$theDateプロパティと$limitDateプロパティの値を設定で</p>
+    <p>DateToolトレイトの関数を使って年月日のストリングを作って保存している。</p>
+    <pre>
+      // クラスの読み込み。
+      // require_once("DateTool.php");
+      require_once("helloX5_DateTool.php");
+
+      class Mlik{
+        // DateTool トレイトを使用する
+        use DateTool;
+        // プロパティ宣言
+        public $theDate;
+        public $limitDate;
+
+        function __construct(){
+          // 今日の日付
+          $now = new DateTime();
+          // 年月日に直して設定する
+          $this->theDate = $this->ymdString($now);
+          // 10日後の日付
+          $this->limitDate = $this->addYmdString($now, 10);
+          // 10日後の日付を作る 　　　　　　　　　　　　　　　　↑
+        }
+      }
+    </pre>
+    <pre>
+      <?php
+        // // クラスの読み込み。
+        // // require_once("DateTool.php");
+        // require_once("helloX5_DateTool.php");
+        //
+        // class Mlik{
+        //   // DateTool トレイトを使用する
+        //   use DateTool;
+        //   // プロパティ宣言
+        //   public $theDate;
+        //   public $limitDate;
+        //
+        //   function __construct(){
+        //     // 今日の日付
+        //     $now = new DateTime();
+        //     // 年月日に直して設定する
+        //     $this->theDate = $this->ymdString($now);
+        //     // 10日後の日付
+        //     $this->limitDate = $this->addYmdString($now, 10);
+        //     // 10日後の日付を作る 　　　　　　　　　　　　　　　　↑
+        //   }
+        // }
+       ?>
+    </pre>
+    <p>まず、DateTimeクラスのインスタンス$nowを作る。</p>
+    <p>$nowには現在の日時データが入る。</p>
+    <p>これをDateToolトレイトで定義してあるymdString()を使って年月日のストリングにして$theDateに保存し、</p>
+    <p>addYmdString()を使って10日後の年月日を求めて$limitDate二保存する。</p>
+    <p>「$this->」で指していることからも分かるように、</p>
+    <p>どちらの関数もMilkクラスで定義してある関数のように使うことができる。</p>
+    <p class="pdg"></p><!--  .pdg -->
+    <h3>Milkクラスのインスタンスを作って確かめる</h3>
+    <p>Milkクラスのインスタンス1myMlikを作って、</p>
+    <p>2つのプロパティに値が設定されたかどうかを確かめてみる。</p>
+    <pre>
+      // Milkクラスファイルを読み込む
+      require_once("helloX5_Milk.php");
+      // Mlikクラスのインスタンスを作る
+      $myMilk = new Milk();
+      echo "作成日:",$myMilk->theDate;
+      echo "\n";
+      echo "期限日",$myMilk->limitDate;
+    </pre>
+    <pre>
+      <?php
+        // Milkクラスファイルを読み込む
+        require_once("helloX5_Milk.php");
+        // Mlikクラスのインスタンスを作る
+        $myMilk = new Milk();
+        echo "作成日:",$myMilk->theDate;
+        echo "\n";
+        echo "期限日",$myMilk->limitDate;
+       ?>
+    </pre>
+    <p>$myMilk->theDateを見ると作った日付、$myMilk->limitDateを見ると</p>
+    <p>その10日後の日付が入っている。</p>
+
+
+
+
+
 
 
 </body>

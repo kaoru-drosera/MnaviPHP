@@ -23,23 +23,26 @@ require_once("helloSinX3.5_Staff.php");
 </head>
 <body>
   <style>
-    .table1 thead th{
-      background-color: black;
-      color: white;
-    }
-    .pdg{
-      padding-top: 50px;
-    }
-    .gaiyo{
-      background-color: rgb(255, 227, 227);
-    }
-    .imgwrap{
-      max-width: 800px;
-      width: 100%;
-    }
-    .imgwrap img{
-      width: 100%;
-    }
+  .table1 thead th{
+    background-color: black;
+    color: white;
+  }
+  .pdg{
+    padding-top: 50px;
+  }
+  .gaiyo{
+    background-color: rgb(255, 227, 227);
+  }
+  .zissyou{
+    background-color:rgb(219, 255, 0) ;
+  }
+  .imgwrap{
+    max-width: 800px;
+    width: 100%;
+  }
+  .imgwrap img{
+    width: 100%;
+  }
   </style>
   <div class="main-contents">
     <h2>トレイト</h2>
@@ -51,7 +54,7 @@ require_once("helloSinX3.5_Staff.php");
       <p class="pdg"></p><!--  .pdg -->
       <p>そのような場合には、<strong>「as」演算子</strong>を使って<strong>TaroToolトレイトのhello()には</strong></p>
       <p><strong>taroHello()のように別名をつける</strong>ことで呼び出せるようにしよう。</p>
-      <pre>
+      <pre class="gaiyo">
         require_once("helloX5.2_HanaTool.php");
         require_once("helloX5.2_TaroTool.php");
         // MyClasクラスを定義する
@@ -89,7 +92,7 @@ require_once("helloSinX3.5_Staff.php");
       </pre>
       <p>この例では、hello()はHanaToolトレイトのhello()を使うという設定に加えて、</p>
       <p>TaroToolトレイトのhello()にはtaroHello()、HanaTooトレイトのhello()にもhanaHello()の別名をつけている。</p>
-      <pre>
+      <pre class="gaiyo">
         // MyClassクラスファイルを読み込む
         // require_once("MyClass.php");
         require_once("helloX5.3_MyClass.php");
@@ -99,7 +102,7 @@ require_once("helloSinX3.5_Staff.php");
         echo "\n";
         $myObj->weekday();
       </pre>
-      <pre>
+      <pre class="zissyou">
         <?php
           // MyClassクラスファイルを読み込む
           // require_once("MyClass.php");

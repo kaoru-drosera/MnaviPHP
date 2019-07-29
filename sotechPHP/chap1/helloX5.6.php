@@ -33,6 +33,9 @@ require_once("helloSinX3.5_Staff.php");
     .gaiyo{
       background-color: rgb(255, 227, 227);
     }
+    .zissyou{
+      background-color:rgb(219, 255, 0) ;
+    }
     .imgwrap{
       max-width: 800px;
       width: 100%;
@@ -48,7 +51,7 @@ require_once("helloSinX3.5_Staff.php");
     <p>抽象メソッドはメソッドの宣言だけで機能を実装していないメソッドで、</p>
     <p>抽象クラスを継承した子クラスで必ずオーバーライドして機能を実装しなければならない。</p>
     <p>抽象メソッドには、public、protected、privateのアクセス権を指定することができる。</p>
-    <pre>
+    <pre class="gaiyo">
       abstract class 抽象クラス名{
         abstract function 抽象メソッド名(引数,引数,…);
         // 抽象クラスの機能の実装
@@ -58,7 +61,7 @@ require_once("helloSinX3.5_Staff.php");
     <p><strong>抽象メソッドを宣言したならば、クラス定義にも「abstruct」を付ける。</strong></p>
     <p class="pdg"></p><!--  .pdg -->
     <p>サンプルコードをば。</p>
-    <pre>
+    <pre class="gaiyo">
       abstract class ShopBiz{
         // 抽象メソッド
         abstract function thanks();
@@ -113,7 +116,7 @@ require_once("helloSinX3.5_Staff.php");
     <p>抽象メソッドにアクセス権が設定されている場合には、</p>
     <p>子クラスでオーバーライドする場合には同じかそれよりもゆるいアクセス権を設定しなければならない。</p>
     <p>公式をば</p>
-    <pre>
+    <pre class="gaiyo">
       class クラス名 extends 抽象クラス名{
         function 抽象メソッド名(){
           // メソッドをオーバーライドして機能を定義する
@@ -121,8 +124,9 @@ require_once("helloSinX3.5_Staff.php");
         // 子クラスの機能の実装
       }
     </pre>
+      <p class="pdg"></p><!--  .pdg -->
       <h3>ShopBiz抽象クラスを継承する</h3>
-      <pre>
+      <pre class="gaiyo">
         require_once("helloX5.6_ShowBiz.php");
 
         class MyShop extends ShopBiz{
@@ -185,9 +189,10 @@ require_once("helloSinX3.5_Staff.php");
     </div><!--  .main-contents -->
 
     <div class="main-contents">
+      <p class="pdg"></p><!--  .pdg -->
       <h3>MyShopクラスのインスタンスを作って試してみる</h3>
       <p>それではMyShopクラスのインスタンス$myObjを作って、hanbai()とgetUriage()を試そう。</p>
-      <pre>
+      <pre class="gaiyo">
         // MyShop クラスファイルを読み込む
         require_once("helloX5.6_MyShop.php");
         // MyShop クラスのインスタンスを作って試す
@@ -196,7 +201,7 @@ require_once("helloSinX3.5_Staff.php");
         $myObj->hanbai(400,1);
         $myObj->getUriage();
       </pre>
-      <pre>
+      <pre class="zissyou">
         <?php
           // MyShop クラスファイルを読み込む
           require_once("helloX5.6_MyShop.php");

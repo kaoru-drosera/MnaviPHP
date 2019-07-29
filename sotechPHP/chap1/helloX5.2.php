@@ -23,23 +23,26 @@ require_once("helloSinX3.5_Staff.php");
 </head>
 <body>
   <style>
-    .table1 thead th{
-      background-color: black;
-      color: white;
-    }
-    .pdg{
-      padding-top: 50px;
-    }
-    .gaiyo{
-      background-color: rgb(255, 227, 227);
-    }
-    .imgwrap{
-      max-width: 800px;
-      width: 100%;
-    }
-    .imgwrap img{
-      width: 100%;
-    }
+  .table1 thead th{
+    background-color: black;
+    color: white;
+  }
+  .pdg{
+    padding-top: 50px;
+  }
+  .gaiyo{
+    background-color: rgb(255, 227, 227);
+  }
+  .zissyou{
+    background-color:rgb(219, 255, 0) ;
+  }
+  .imgwrap{
+    max-width: 800px;
+    width: 100%;
+  }
+  .imgwrap img{
+    width: 100%;
+  }
   </style>
   <div class="main-contents">
     <h2>トレイト</h2>
@@ -47,7 +50,7 @@ require_once("helloSinX3.5_Staff.php");
       <p>複数のトレイトを使うと<strong>同じ名前でメソッドが定義されている</strong>ことがあり、</p>
       <p>そのような場合にどのトレイトのメソッドを使うかを指定する方法がある。</p>
     <h3>同じ名前があるメソッド</h3>
-      <pre>
+      <pre class="gaiyo">
         // TaroToolトレイトを定義する
         trait TaroTool{
           public function hello(){
@@ -86,7 +89,7 @@ require_once("helloSinX3.5_Staff.php");
          ?>
       </pre>
       <p>まず、TaroToolトレイトとHanaToolトレイトを用意する。</p>
-      <pre>
+      <pre class="gaiyo">
         // HanaToolトレイトを定義する
         trait HanaTool{
           public function hello(){
@@ -113,7 +116,7 @@ require_once("helloSinX3.5_Staff.php");
       <p>名前の衝突を防ぐには<strong>「insteadof」</strong>キーワードを使う。</p>
       <p>ちなみに<strong>「A insteadof B」で「Bの代わりにA」</strong>という意味。insteadofの使い方もだいたいそんな。</p>
       <p>次のコードではTaroToolトレイトとHanaToolトレイトを利用する。</p>
-      <pre>
+      <pre class="gaiyo">
         require_once("helloX5.2_HanaTool.php");
         require_once("helloX5.2_TaroTool.php");
         // MyClasクラスを定義する
@@ -144,7 +147,7 @@ require_once("helloSinX3.5_Staff.php");
       <p>トレイトを指定するuse文では、TaroTool、HanaToolと2つのトレイトの設定に加えて</p>
       <p>ブロック文が付いてくる。ブロック文では<strong>「HanaTool::hello insteadof TaroTool」</strong>のように</p>
       <p>のように、HanaToolトレイトのHello()を使うことを宣言。</p>
-      <pre>
+      <pre class="gaiyo">
         // MyClassクラスファイルを読み込む
         // require_once("MyClass.php");
         require_once("helloX5.2_MyClass.php");
@@ -154,7 +157,7 @@ require_once("helloSinX3.5_Staff.php");
         echo "\n";
         $myObj->weekday();
       </pre>
-      <pre>
+      <pre class="zissyou">
         <?php
         // MyClassクラスファイルを読み込む
         // require_once("MyClass.php");

@@ -23,23 +23,26 @@ require_once("helloSinX3.5_Staff.php");
 </head>
 <body>
   <style>
-    .table1 thead th{
-      background-color: black;
-      color: white;
-    }
-    .pdg{
-      padding-top: 50px;
-    }
-    .gaiyo{
-      background-color: rgb(255, 227, 227);
-    }
-    .imgwrap{
-      max-width: 800px;
-      width: 100%;
-    }
-    .imgwrap img{
-      width: 100%;
-    }
+  .table1 thead th{
+    background-color: black;
+    color: white;
+  }
+  .pdg{
+    padding-top: 50px;
+  }
+  .gaiyo{
+    background-color: rgb(255, 227, 227);
+  }
+  .zissyou{
+    background-color:rgb(219, 255, 0) ;
+  }
+  .imgwrap{
+    max-width: 800px;
+    width: 100%;
+  }
+  .imgwrap img{
+    width: 100%;
+  }
   </style>
   <div class="main-contents">
     <h2>トレイト</h2>
@@ -49,14 +52,14 @@ require_once("helloSinX3.5_Staff.php");
     <p>トレイトは次に示すようにクラス定義と似た書式で定義できる。</p>
     <p>クラスを継承したトレイトを定義することもできる。</p>
     <p>トレイトは以下の公式で書ける。</p>
-    <pre>
+    <pre class="gaiyo">
       // トレイトの定義
       trait トレイト名{
         // トレイトのプロパティ
         // トレイトのメソッド
       }
     </pre>
-    <pre>
+    <pre class="gaiyo">
       // 親クラスを指定したトレイトの定義
       trait トレイト名 extends 親クラス{
         // トレイトのプロパティ
@@ -65,7 +68,7 @@ require_once("helloSinX3.5_Staff.php");
     </pre>
     <h3>DateToolトレイトを定義する</h3>
     <p>次の例ではDateToolトレイトを定義しています。</p>
-    <pre>
+    <pre class="gaiyo">
       // 2つの関数があるDateToolトレイト
       trait DateTool{
         // DateTimeを年月日の書式で返す
@@ -106,7 +109,7 @@ require_once("helloSinX3.5_Staff.php");
     <p class="pdg"></p>
     <h3>トレイトの使い方</h3>
     <p>トレイトを利用するには、<strong>「use」</strong>キーワードを指定する。</p>
-    <pre>
+    <pre class="gaiyo">
       class クラス名{
         use トレイト名,トレイト名…
         // クラスのコード
@@ -120,7 +123,7 @@ require_once("helloSinX3.5_Staff.php");
     <p>Milkクラスではuse DateToolでDateToolトレイトの利用を宣言しておき、</p>
     <p>コンストラクタで$theDateプロパティと$limitDateプロパティの値を設定で</p>
     <p>DateToolトレイトの関数を使って年月日のストリングを作って保存している。</p>
-    <pre>
+    <pre class="gaiyo">
       // クラスの読み込み。
       // require_once("DateTool.php");
       require_once("helloX5_DateTool.php");
@@ -178,7 +181,7 @@ require_once("helloSinX3.5_Staff.php");
     <h3>Milkクラスのインスタンスを作って確かめる</h3>
     <p>Milkクラスのインスタンス1myMlikを作って、</p>
     <p>2つのプロパティに値が設定されたかどうかを確かめてみる。</p>
-    <pre>
+    <pre class="gaiyo">
       // Milkクラスファイルを読み込む
       require_once("helloX5_Milk.php");
       // Mlikクラスのインスタンスを作る
@@ -187,7 +190,7 @@ require_once("helloSinX3.5_Staff.php");
       echo "\n";
       echo "期限日",$myMilk->limitDate;
     </pre>
-    <pre>
+    <pre class="zissyou">
       <?php
         // Milkクラスファイルを読み込む
         require_once("helloX5_Milk.php");

@@ -23,23 +23,26 @@ require_once("helloSinX3.5_Staff.php");
 </head>
 <body>
   <style>
-    .table1 thead th{
-      background-color: black;
-      color: white;
-    }
-    .pdg{
-      padding-top: 50px;
-    }
-    .gaiyo{
-      background-color: rgb(255, 227, 227);
-    }
-    .imgwrap{
-      max-width: 800px;
-      width: 100%;
-    }
-    .imgwrap img{
-      width: 100%;
-    }
+  .table1 thead th{
+    background-color: black;
+    color: white;
+  }
+  .pdg{
+    padding-top: 50px;
+  }
+  .gaiyo{
+    background-color: rgb(255, 227, 227);
+  }
+  .zissyou{
+    background-color:rgb(219, 255, 0) ;
+  }
+  .imgwrap{
+    max-width: 800px;
+    width: 100%;
+  }
+  .imgwrap img{
+    width: 100%;
+  }
   </style>
   <div class="main-contents">
     <div class="main-contents">
@@ -60,7 +63,7 @@ require_once("helloSinX3.5_Staff.php");
       <p>アクセス権はpublicのみが設定可能である。</p>
       <p>指定を省略すると初期値のpublicが適用されるので指定する必要はない。</p>
       <p>いかがインターフェースの公式。</p>
-      <pre>
+      <pre class="gaiyo">
         // インターフェースの定義
         interface インターフェース名{
           const 定数名 = 値;
@@ -69,7 +72,7 @@ require_once("helloSinX3.5_Staff.php");
       </pre>
       <p>他のインターフェースを継承したインターフェースも作ることができる。</p>
       <p>その場合以下の通り。</p>
-      <pre>
+      <pre class="gaiyo">
         // 他のインターフェースを継承したインターフェース
         interface 子インターフェース名 extends(exitend?) 親インターフェース{
           const 定数=値;
@@ -78,7 +81,7 @@ require_once("helloSinX3.5_Staff.php");
       </pre>
       <p>もっと簡単な例として、WorldRuleインターフェースを作ってみる。</p>
       <p>WorldRuleインターフェースでは、hello()メソッドの実装だけを指定しています。</p>
-      <pre>
+      <pre class="gaiyo">
         interface WorldRule{
           function hello();
           // WorldRuleインターフェースの規格では、
@@ -98,14 +101,14 @@ require_once("helloSinX3.5_Staff.php");
       <h3>インターフェースを採用する</h3>
       <p>インターフェースを採用するクラスでは、<strong>「implements」</strong>で</p>
       <p>インターフェースを指定する。継承と違って、複数のインターフェースを採用できる。</p>
-      <pre>
+      <pre class="gaiyo">
         // インターフェースを採用するクラス
         class クラス名 implements インターフェース名,インターフェース名,…{
           // クラスのコード
         }
       </pre>
       <p>もし、クラスの継承も行う場合は次の書式になる。</p>
-      <pre>
+      <pre class="gaiyo">
         // インターフェースを採用するクラスに親クラスがある場合
         class クラス名 extends 親クラス名 implements  インターフェース名,インターフェース名,…{
           // クラスのコード
@@ -115,10 +118,28 @@ require_once("helloSinX3.5_Staff.php");
       <p>「implements」キーワードでWorldRuleを指定してクラス定義をする。</p>
       <p>WorldRuleインターフェースで必ず実装しなければならないのはhello()である。</p>
       <p>ここではhello()が事項されたならば「こんにちは」と表示されるようになっている。</p>
-      <pre>
+      <pre class="gaiyo">
+        require_once("helloX5.4_WorldRule.php");
+
+        class MyClass implements WorldRule{
+          // WorldRuleインターフェースを採用する。
+
+          //WorldRuleインターフェースで指定されているメソッド
+          public function hello(){
+            echo "こんにちは！","\n";
+            // WorldRuleインターフェースで指定されている
+            // hello()を実装します
+          }
+
+          // MyClass独自のメソッド
+          public function thanks(){
+            echo "ありがとう","\n";
+          }
+
+        }
 
       </pre>
-      <pre>
+      <pre class="zissyou">
         <?php
         require_once("helloX5.4_WorldRule.php");
 

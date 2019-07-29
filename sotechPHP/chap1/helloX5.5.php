@@ -23,23 +23,26 @@ require_once("helloSinX3.5_Staff.php");
 </head>
 <body>
   <style>
-    .table1 thead th{
-      background-color: black;
-      color: white;
-    }
-    .pdg{
-      padding-top: 50px;
-    }
-    .gaiyo{
-      background-color: rgb(255, 227, 227);
-    }
-    .imgwrap{
-      max-width: 800px;
-      width: 100%;
-    }
-    .imgwrap img{
-      width: 100%;
-    }
+  .table1 thead th{
+    background-color: black;
+    color: white;
+  }
+  .pdg{
+    padding-top: 50px;
+  }
+  .gaiyo{
+    background-color: rgb(255, 227, 227);
+  }
+  .zissyou{
+    background-color:rgb(219, 255, 0) ;
+  }
+  .imgwrap{
+    max-width: 800px;
+    width: 100%;
+  }
+  .imgwrap img{
+    width: 100%;
+  }
   </style>
   <div class="main-contents">
       <h2>インターフェースをかるく</h2>
@@ -53,7 +56,7 @@ require_once("helloSinX3.5_Staff.php");
       </ul>
       <p>の3つのメソッドが宣言してある。</p>
       <p>newGameには引数、isAliveには戻り値の方が指定している。</p>
-      <pre>
+      <pre class="gaiyo">
         interface GameBook{
           function newGame($point);
           // newGameには引数が1つ
@@ -85,7 +88,7 @@ require_once("helloSinX3.5_Staff.php");
       <p>次のMyGameクラスでは、先のGameBookインターフェースを採用している。</p>
       <p>したがって、<strong>インターフェースの設定に基づいて、newGame(),play(),isAlive()の</strong></p>
       <p><strong>3つのメソッドを実装している。</strong></p>
-      <pre>
+      <pre class="gaiyo">
         // require_once("GameBook.php");
         require_once("helloX5.5_GameBook.php");
 
@@ -99,7 +102,9 @@ require_once("helloSinX3.5_Staff.php");
             // インスタンスの作成と同時にゲーム開始
           }
 
+
         // GameBookインターフェースで指定されているメソッド
+
         // 1.ニューゲーム
         public function newGame($point = 50){
           // インターフェースの指定に基づいて引数が1つ
@@ -185,6 +190,7 @@ require_once("helloSinX3.5_Staff.php");
       <p>そして、</p>
       <p><strong>isAlive()では現在のポイント$hitPointが0より大きければtrue,</strong></p>
       <p><strong>小さければfalseを返している。</strong></p>
+      <p class="pdg"></p><!--  .pdg -->
     </div><!--  .main-contents -->
 
     <div class="main-contents">
@@ -194,7 +200,7 @@ require_once("helloSinX3.5_Staff.php");
       <p>for文を使ってplay()を10回繰り返す。</p>
       <p>繰り返すたびにisAliveをチェックして、</p>
       <p>falseならば繰り返しをbreakして抜ける。</p>
-      <pre>
+      <pre class="gaiyo">
         // MyGameクラスファイルを読み込む
         require_once("helloX5.5_MyGame.php");
 
@@ -208,7 +214,7 @@ require_once("helloSinX3.5_Staff.php");
         }
         echo "ゲーム終了！"
       </pre>
-      <pre>
+      <pre class="zissyou">
         <?php
           // MyGameクラスファイルを読み込む
           require_once("helloX5.5_MyGame.php");

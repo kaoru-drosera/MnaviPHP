@@ -34,7 +34,7 @@ require_once("helloSinX3.5_Staff.php");
     background-color: rgb(255, 227, 227);
   }
   .zissyou{
-    background-color:rgb(219, 255, 0) ;
+    background-color:rgb(242, 255, 166) ;
   }
   .imgwrap{
     max-width: 800px;
@@ -52,7 +52,8 @@ require_once("helloSinX3.5_Staff.php");
       <p>MyClassはRedBookインターフェースで定められているメソッドを必ず実装しなければならない。</p>
       <p>ただ、インターフェースではメソッドの機能については定めていないので、</p>
       <p>MyClassがメソッドにどんな機能を実装するかについては関知しない。</p>
-      <p>これも画像が欲しい。p242。</p>
+      <p>画像とってきたよー。p242。</p>
+      <div class="imgwrap"><img src="imgs/インターフェース0.jpg" alt="インターフェース0"></div>
       <p class="pdg"></p><!--  .pdg -->
       <p>これは、日本の企画にあっている電化製品ならばコンセントにさせるけど、</p>
       <p>どんな機能の製品なのかまでは関知しないのに似ている。</p>

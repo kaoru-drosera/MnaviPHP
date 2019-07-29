@@ -23,23 +23,26 @@ require_once("helloSinX3.5_Staff.php");
 </head>
 <body>
   <style>
-    .table1 thead th{
-      background-color: black;
-      color: white;
-    }
-    .pdg{
-      padding-top: 50px;
-    }
-    .gaiyo{
-      background-color: rgb(255, 227, 227);
-    }
-    .imgwrap{
-      max-width: 800px;
-      width: 100%;
-    }
-    .imgwrap img{
-      width: 100%;
-    }
+  .table1 thead th{
+    background-color: black;
+    color: white;
+  }
+  .pdg{
+    padding-top: 50px;
+  }
+  .gaiyo{
+    background-color: rgb(255, 227, 227);
+  }
+  .zissyou{
+    background-color:rgb(242, 255, 166) ;
+  }
+  .imgwrap{
+    max-width: 800px;
+    width: 100%;
+  }
+  .imgwrap img{
+    width: 100%;
+  }
   </style>
   <div class="main-contents">
     <h2>クラスの継承</h2>
@@ -50,7 +53,7 @@ require_once("helloSinX3.5_Staff.php");
     <p>ベースになるクラスAのコードを改変せず拡張するので、</p>
     <p><strong>拡張による影響がクラスAには及ばない</strong>というメリットがある。</p>
     <p>公式は以下の通り。</p>
-    <pre>
+    <pre class="gaiyo">
       class 子クラス extends 親クラス{
 
       }
@@ -58,7 +61,7 @@ require_once("helloSinX3.5_Staff.php");
     <h3>親クラスのPlayerクラス</h3>
     <p>では実際にクラス継承を簡単な例で試してみましょう。</p>
     <p>コードは以下の通り。</p>
-    <pre>
+    <pre class="gaiyo">
       // Playerクラスを定義する
       class Player{
         // インスタンスプロパティ
@@ -122,7 +125,7 @@ require_once("helloSinX3.5_Staff.php");
     <p>Soccerクラスを定義する。Soccerクラスにはplay()メソッドを定義している。</p>
     <p>play()メソッドでは{$this->name}のようにSoccerクラスでは定義していない</p>
     <p>$nameプロパティを仕様している点に注目するよう。</p>
-    <pre>
+    <pre class="gaiyo">
       // Playerクラス定義ファイルを読み込む
 
       // requre_once("Player.php");
@@ -152,10 +155,33 @@ require_once("helloSinX3.5_Staff.php");
     <h3>Soccerクラスのインスタンスを作って利用する</h3>
     <P>では、子クラスのSoccerクラスを使って継承の機能を確かめてみよう。</P>
     <p>次のコードを使ってSoccerクラスのインスタンスを作る。</p>
-    <pre>
+    <pre class="gaiyo">
+      // クラスファイルを読みこむ
+      // require_once("Soccer.php");
+      require_once("helloX4_Soccer.php");
 
+      // Soccerクラスのインスタンスを作る;
+      $player1 = new Soccer("伸次");
+
+      // 親クラスのメソッドを試す
+      $player1->who();
+      // who()は親クラスのPlayerクラスで
+      // 定義している。
+
+      // 子クラスのメソッドを試す
+      $player1->play();
+
+
+
+     // Soccerクラスのインスタンスを作る
+      $player2 = new Soccer("つばさ");
+
+      // __toString()メソッドを試す
+      echo "{$player2}";
+      // マジックメソッドの__toString()で
+      // 文字列にキャストされる
     </pre>
-    <pre>
+    <pre class="zissyou">
       <?php
         // クラスファイルを読みこむ
         // require_once("Soccer.php");

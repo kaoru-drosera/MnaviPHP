@@ -102,6 +102,7 @@ require_once("helloSinX3.5_Staff.php");
        ?>
     </pre>
     <p>このコードの下の画像取ってきてほしい p248にあるから</p>
+    <div class="imgwrap"><img src="imgs/抽象クラス0.jpg" alt="抽象クラス0"></div>
     <p class="pdg"></p><!--  .pdg -->
     <p class="pdg"></p><!--  .pdg -->
   </div><!--  .main-contents -->

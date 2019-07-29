@@ -34,7 +34,7 @@ require_once("helloSinX3.5_Staff.php");
     background-color: rgb(255, 227, 227);
   }
   .zissyou{
-    background-color:rgb(219, 255, 0) ;
+    background-color:rgb(242, 255, 166) ;
   }
   .imgwrap{
     max-width: 800px;
@@ -66,6 +66,7 @@ require_once("helloSinX3.5_Staff.php");
         // トレイトのメソッド
       }
     </pre>
+    <p class="pdg"></p>
     <h3>DateToolトレイトを定義する</h3>
     <p>次の例ではDateToolトレイトを定義しています。</p>
     <pre class="gaiyo">

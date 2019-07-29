@@ -21,23 +21,26 @@ error_reporting(E_ALL & ~E_NOTICE);
 </head>
 <body>
   <style>
-    .table1 thead th{
-      background-color: black;
-      color: white;
-    }
-    .pdg{
-      padding-top: 50px;
-    }
-    .gaiyo{
-      background-color: rgb(255, 227, 227);
-    }
-    .imgwrap{
-      max-width: 800px;
-      width: 100%;
-    }
-    .imgwrap img{
-      width: 100%;
-    }
+  .table1 thead th{
+    background-color: black;
+    color: white;
+  }
+  .pdg{
+    padding-top: 50px;
+  }
+  .gaiyo{
+    background-color: rgb(255, 227, 227);
+  }
+  .zissyou{
+    background-color:rgb(242, 255, 166) ;
+  }
+  .imgwrap{
+    max-width: 800px;
+    width: 100%;
+  }
+  .imgwrap img{
+    width: 100%;
+  }
   </style>
   <div class="main-contents">
     <h2>オブジェクト指向プログラミング(OOP)を理解する</h2>
@@ -127,7 +130,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <div class="imgwrap"><img src="imgs/プロパティのアクセスとメソッド実行.jpg" alt="プロパティのアクセスとメソッド実行"></div>
     <p>↑「->age = 26」で、「年齢が26歳」というプロパティとなる。</p>
     <p>「$cook1->age = 26」で、「『$cook1(インスタンス)』の『年齢(プロパティ)』が26歳」という意味になる。</p>
-    
+
   </div>
 
 </body>

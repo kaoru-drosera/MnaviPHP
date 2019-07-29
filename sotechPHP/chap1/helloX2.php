@@ -37,23 +37,26 @@ error_reporting(E_ALL & ~E_NOTICE);
 </head>
 <body>
   <style>
-    .table1 thead th{
-      background-color: black;
-      color: white;
-    }
-    .pdg{
-      padding-top: 50px;
-    }
-    .gaiyo{
-      background-color: rgb(255, 227, 227);
-    }
-    .imgwrap{
-      max-width: 800px;
-      width: 100%;
-    }
-    .imgwrap img{
-      width: 100%;
-    }
+  .table1 thead th{
+    background-color: black;
+    color: white;
+  }
+  .pdg{
+    padding-top: 50px;
+  }
+  .gaiyo{
+    background-color: rgb(255, 227, 227);
+  }
+  .zissyou{
+    background-color:rgb(242, 255, 166) ;
+  }
+  .imgwrap{
+    max-width: 800px;
+    width: 100%;
+  }
+  .imgwrap img{
+    width: 100%;
+  }
   </style>
   <div class="main-contents">
     <h2>続・オブジェクト指向プログラミング(OOP)を理解する</h2>
@@ -184,7 +187,8 @@ error_reporting(E_ALL & ~E_NOTICE);
       }
     }
   </pre>
-  <p>ここも画像がいるかも。p215の上部分</p>
+  <p>おまたせ！画像とってきたよー！p215の上部分</p>
+  <div class="imgwrap"><img src="imgs/抽象クラスと抽象メソッド.jpg" alt="抽象クラスと抽象メソッド"></div>
 
 
 

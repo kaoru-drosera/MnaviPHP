@@ -31,6 +31,9 @@ error_reporting(E_ALL & ~E_NOTICE);
   .gaiyo{
     background-color: rgb(255, 227, 227);
   }
+  .zissyou{
+    background-color:rgb(242, 255, 166) ;
+  }
   .imgwrap{
     max-width: 800px;
     width: 100%;

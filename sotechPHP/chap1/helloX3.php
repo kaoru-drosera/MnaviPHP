@@ -37,23 +37,26 @@ error_reporting(E_ALL & ~E_NOTICE);
 </head>
 <body>
   <style>
-    .table1 thead th{
-      background-color: black;
-      color: white;
-    }
-    .pdg{
-      padding-top: 50px;
-    }
-    .gaiyo{
-      background-color: rgb(255, 227, 227);
-    }
-    .imgwrap{
-      max-width: 800px;
-      width: 100%;
-    }
-    .imgwrap img{
-      width: 100%;
-    }
+  .table1 thead th{
+    background-color: black;
+    color: white;
+  }
+  .pdg{
+    padding-top: 50px;
+  }
+  .gaiyo{
+    background-color: rgb(255, 227, 227);
+  }
+  .zissyou{
+    background-color:rgb(242, 255, 166) ;
+  }
+  .imgwrap{
+    max-width: 800px;
+    width: 100%;
+  }
+  .imgwrap img{
+    width: 100%;
+  }
   </style>
   <div class="main-contents">
     <h2>クラス定義</h2>
@@ -67,7 +70,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p>プロパティのアクセス権は必須ですが、メソッドのアクセス権は省略できます。</p>
     <p>メソッドのアクセス権を省略するとpublicになります。</p>
     <p>公式は以下の通り。</p>
-    <pre>
+    <pre class="gaiyo">
       //プロパティとメソッドがあるクラス定義
       class クラス名{
         //プロパティ
@@ -86,7 +89,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p>例えば、Staffクラスの定義は次のように書く。</p>
     <p>Staffクラスにはnameプロパティ、ageプロパティ、hello()メソッドが定義してある。</p>
     <p>例行くよー…。</p>
-    <pre>
+    <pre class="gaiyo">
       //以下、Staffクラス。
         class Staff{
           // インスタンスプロパティ
@@ -123,7 +126,7 @@ error_reporting(E_ALL & ~E_NOTICE);
       // メソッドを実行する。
     </pre>
 
-    <pre>
+    <pre class="zissyou">
       <?php
       //以下、Staffクラス。
         class Staff{
@@ -168,7 +171,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <h3>プロパティの初期値</h3>
     <p>プロパティには初期値を設定できます。</p>
     <p>ただし、設定できるのは単純な値だけで、計算式などの式は指定できない。</p>
-    <pre>
+    <pre class="gaiyo">
       // 設定できるもの
       public $hour = 360;
       // 設定できないもの。計算式(60 * 60…など)は設定できない。
@@ -178,7 +181,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <h3>インスタンスを作る</h3>
     <p>インスタンスはnew演算子で作る。</p>
     <p>今更だがコードは以下の通り。</p>
-    <pre>
+    <pre class="gaiyo">
       $hana = new Staff();
       $taro = new Staff();
     </pre>
@@ -187,7 +190,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p>このプロパティには初期値が設定されていないので、今から設定しよう。</p>
     <p>インスタンスの値は、それぞれのインスタンスに「->」演算子を使ってアクセスする。</p>
     <p class="pdg"></p><!--  .pdg -->
-    <pre>
+    <pre class="gaiyo">
       // インスタンスプロパティにアクセスする
       $インスタンス -> プロパティ名;
     </pre>
@@ -198,7 +201,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p>print_r()で確認すると、2このインスタンスが作られて、</p>
     <p>それぞれのプロパティに値が設定されているのがわかるだろう。</p>
     <p>さぁ次の例行くよ</p>
-    <pre>
+    <pre class="gaiyo">
       // プロパティの値を設定する
       $hana->name = "華";
       $hana->age = "2100";
@@ -223,13 +226,13 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p class="pdg"></p><!--  .pdg -->
     <h4>インスタンスメソッドの実行</h4>
     <p>インスタンスメソッドを実行する場合も同じように「->」演算子を使う。</p>
-    <pre>
+    <pre class="gaiyo">
       $インスタンス->メソッド();
     </pre>
     <p>$hanaと$taroに対して、hello()を出力するコードは次の通り。</p>
     <p>Staffクラスで定義してあるhello()が実行されて、</p>
     <p>「こんにちは！」のように出力される。</p>
-    <pre>
+    <pre class="gaiyo">
       // メソッドを実行する
       $hana->hello();
       $taro->hello();

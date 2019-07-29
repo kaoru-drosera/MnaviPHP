@@ -72,11 +72,11 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p>と呼称は異なるが、</p>
     <p>PHPでは「parent」キーワードで継承される側のクラスを指し示すので</p>
     <p>「親クラスと子クラス」という表現が正しい。</p>
-
+    <p class="pdg"></p>
     <h3>ちょこっと実演</h3>
     <p>PHPでは、継承を「extends」キーワードを使って記述する。</p>
     <p>公式としてはこんな。</p>
-    <pre>
+    <pre class="gaiyo">
       class 子クラス extends 親クラス{
 
       }
@@ -84,7 +84,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p>↑の公式が示す通り、<strong>子クラスが親クラスを指定する</strong>。</p>
     <p><strong>親クラスが自分の子クラスを指定することはできない</strong>。</p>
     <p>従って図でも<strong>「子クラス→親クラス」のように矢印を親クラスに向けて書きます</strong>。</p>
-    <pre>
+    <pre class="gaiyo">
       class FrenchCook extends Cook{
         // ↑まずは子クラスを、その次にextendsで繋いで継承したい親クラスを書く。
         // そうしてやっとFrenchCookで拡張する内容をこの中に書く。
@@ -110,14 +110,14 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p><strong>複数のトレイトを採用したり、トレイトを組み合わせて新しいトレイトを作る</strong>ことも可能だ。</p>
     <p>ただし、利用する際には名前の衝突などに気をくばる必要があるぞ。</p>
     <p>…よくわからん。とりあえず公式を見てみよっか</p>
-    <pre>
+    <pre class="gaiyo">
       //トレイトの定義
       trait トレイト名{
         // トレイトのプロパティ;
         // トレイトのメソッド;
       }
     </pre>
-    <pre>
+    <pre class="gaiyo">
       // トレイトを利用するクラス
       class クラス名{
         use トレイト名;
@@ -137,13 +137,13 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p><strong>インターフェースは「interface」キーワードをつけて宣言して定義</strong>し、</p>
     <p><strong>インターフェースを採用するクラスでは「implement」キーワードで指定</strong>する。</p>
     <p>公式に当てはめるならこんな。</p>
-    <pre>
+    <pre class="gaiyo">
       // インターフェースの定義
       interface インターフェース名{
         function 関数名();
       }
     </pre>
-    <pre>
+    <pre class="gaiyo">
       // インターフェースを採用するクラス
       class クラス名 implements インターフェース名{
         ↑「インターフェース名」の部分のインターフェースを採用する。
@@ -169,14 +169,14 @@ error_reporting(E_ALL & ~E_NOTICE);
   <p>クラス内のメソッドから抽象メソッドを実行することで、</p>
   <p>実際の処理は子クラスに任せる設計(デリゲート delegate. not デリケート)が可能になる。</p>
   <p>公式も見てみよう。</p>
-  <pre>
+  <pre class="gaiyo">
   // 抽象クラス
   abstract class 抽象クラス名 {
     abstract function 抽象メソッド名();
     // ↑メソッド名を宣言するだけで、機能は定義しない。
   }
   </pre>
-  <pre>
+  <pre class="gaiyo">
     // 抽象メソッドを実装する
     class クラス名 extends 抽象クラス名{
       function 抽象メソッド名(){

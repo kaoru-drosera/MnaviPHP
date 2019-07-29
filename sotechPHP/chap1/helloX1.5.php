@@ -21,23 +21,23 @@ error_reporting(E_ALL & ~E_NOTICE);
 </head>
 <body>
   <style>
-    .table1 thead th{
-      background-color: black;
-      color: white;
-    }
-    .pdg{
-      padding-top: 50px;
-    }
-    .gaiyo{
-      background-color: rgb(255, 227, 227);
-    }
-    .imgwrap{
-      max-width: 800px;
-      width: 100%;
-    }
-    .imgwrap img{
-      width: 100%;
-    }
+  .table1 thead th{
+    background-color: black;
+    color: white;
+  }
+  .pdg{
+    padding-top: 50px;
+  }
+  .gaiyo{
+    background-color: rgb(255, 227, 227);
+  }
+  .imgwrap{
+    max-width: 800px;
+    width: 100%;
+  }
+  .imgwrap img{
+    width: 100%;
+  }
   </style>
   <div class="main-contents">
     <h2>オブジェクト指向プログラミング(OOP)を実演する</h2>
@@ -46,7 +46,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p><strong>オブジェクトにどんなプロジェクトがあり、メソッドがあるかを定義したもの</strong></p>
     <p>これが<strong>クラス</strong>である。</p>
     <p>クラス定義は、大枠としては以下のコードで書けるぞ。</p>
-    <pre>
+    <pre class="gaiyo">
       //プロパティとメソッドを定義するクラス
       class クラス名{
         // プロパティの定義
@@ -54,7 +54,7 @@ error_reporting(E_ALL & ~E_NOTICE);
       }
     </pre>
     <p>早速、「Cook」クラスを今の式をもとに書いてみよう。</p>
-    <pre>
+    <pre class="gaiyo">
       class Cook {
         // コックのプロパティ ←「名前」や「性別」などの「属性」
         // コックのメソッド ←「料理を作る」などの「機能」
@@ -71,12 +71,12 @@ error_reporting(E_ALL & ~E_NOTICE);
 
     <h4>クラスからインスタンスを作る</h4>
     <p>クラスからインスタンスを作るには、「new」演算子を使う。</p>
-    <pre>
+    <pre class="gaiyo">
       $Cook1 = new Cook();
       $Cook2 = new Cook();
         // newの隣にあるCookはさっきclassで作った「Cook(クラス)」の事？
     </pre>
-    <pre>
+    <pre class="zissyou">
       <?php
         $Cook1 = new Cook();
         $Cook2 = new Cook();
@@ -90,13 +90,13 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p>クラスのインスタンスを使って何か処理を行うには、</p>
     <p>インスタンスに命令したり、インスタンスに問い合わせたりします。</p>
     <p>ただし、<strong>命令や問い合わせができるのは「クラスが定義されている」場合に限る</strong>のだが。</p>
-    <pre>
+    <pre class="gaiyo">
       $Cook1->age = 26;
       // ↑『$Cook1(インスタンス)』の「age(プロパティ)」を「26(プロパティの値)」に設定。
       $Cook2->omlete();
       // ↑ $Cook2のomlete()メソッドを実行する。(?)
     </pre>
-    <pre>
+    <pre class="zissyou">
       <?php
         $Cook1->age = 26;
         // ↑『$Cook1(インスタンス)』の「age(プロパティ)」を「26(プロパティの値)」に設定。

@@ -66,6 +66,7 @@ require_once("helloSinX3.5_Staff.php");
         // トレイトのメソッド
       }
     </pre>
+    <p class="pdg"></p><!--  .pdg -->
     <h3>DateToolトレイトを定義する</h3>
     <p>次の例ではDateToolトレイトを定義しています。</p>
     <pre class="gaiyo">

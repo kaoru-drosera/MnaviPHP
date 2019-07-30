@@ -45,28 +45,47 @@ error_reporting(E_ALL & ~E_NOTICE);
     <h2>HTTPの基礎知識</h2>
     <h3>送信フォームを作る</h3>
 
-    <p>HTMLで送信フォームを作り、フォームのアクションでPHPプログラムを実行する。</p>
-    <p>formタグのmethod属性でPOSTまたはGETを指定し、action属性で実行するPHPファイルを指定するのだ。</p>
+    <pre class="gaiyo">
+      // フォーム入力の値を得る(単価と個数)
+      $tanka = $_POST["tanka"];
+      $kosu = $_POST["kosu"];
+      // →formで入力された値が、nameに応じてpostで送られてくる。
+      // これを変数に取る。
 
-    <h3>テキストフィールドの値をPOSTメソッドで送信する</h3>
-    <form action="hello1-8-2_calc.php" method="POST">
-      <!-- <ul>
-        <li><label for="tanka">単価:  <input type="number" name="tanka" id="tanka"></label></li>
-        <li><label for="kosu">個数:  <input type="number" name="kosu" id="kosu"></label></li>
-        <li><label for="submit1"><input type="submit" value="計算開始！" id="submit1"></label></li>
-      </ul> -->
-      <ul>
-        <li><label>単価:  <input type="number" name="tanka" ></label></li>
-        <li><label>個数:  <input type="number" name="kosu" ></label></li>
-        <li><label><input type="submit" value="計算開始！" ></label></li>
-      </ul>
-    </form>
-    <p class="pdg"></p><!--  .pdg -->
+      // 計算する
+      $price = $tanka * $kosu;
+
+      //表示する
+      $tanka = number_format($tanka);
+      $price = number_format($price);
+      echo "単価{$tanka}円 ✖︎ {$kosu}個　は","\n", "{$price}円です。"
+    </pre><!--  .gaiyo -->
+    <div class="codewrap">
+      <p class="pdg"></p>
+      <?php
+        // フォーム入力の値を得る(単価と個数)
+        $tanka = $_POST["tanka"];
+        $kosu = $_POST["kosu"];
+        // →formで入力された値が、nameに応じてpostで送られてくる。
+        // これを変数に取る。
+
+        // 計算する(合計金額)
+        $price = $tanka * $kosu;
+
+        //表示する(3ケタ取り)
+        $tanka = number_format($tanka);
+        $price = number_format($price);
+        echo "単価{$tanka}円 ✖︎ {$kosu}個　は","\n", "{$price}円です。";
+       ?>
+       <p class="pdg"></p><!--  .pdg -->
+    </div><!--  .codewrap -->
+    <a href="hello1-8-2.php">戻る</a>
+
     <h3>POSTされた値を調べる</h3>
     <p><strong>POSTされた値は$_POSTグローバル変数に入る。</strong></p>
     <p>$_POSTはフォームのinput項目の値の配列になる。</p>
     <p>入力された各値は、name属性につけた名前をキーにして配列$_POSTに保存される。</p>
-    <p>先の「hello1-8-2.php」において、</p>
+    <p>先の「hello1-8-2.5.php」において、</p>
     <p>各inputタグのname属性で「単価:」には"tanka"、「個数:」には"kosu"</p>
     <p>という名前が付けてあるので、単価は$_POST["tanka"]、個数は["kosu"]でアクセスが可能。</p>
     <p><strong>number_format()</strong>は、数値を3ケタ位取りして表示する関数である。</p>

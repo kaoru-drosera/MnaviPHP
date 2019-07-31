@@ -83,7 +83,6 @@ error_reporting(E_ALL & ~E_NOTICE);
      <p>一見何も変わっていないが、注目すべきはデベロッパーツール。</p>
      <p>以下のコードがデベロッパーツールでは特殊文字になっている。</p>
      <div class="imgwrap"><img src="imgs/es().jpg" alt="es()"></div>
-     <p>hahahahahaha</p>
 
 
     <p class="pdg"></p><!--  .pdg -->

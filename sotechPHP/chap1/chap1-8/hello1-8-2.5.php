@@ -47,7 +47,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 
     <p>HTMLで送信フォームを作り、フォームのアクションでPHPプログラムを実行する。</p>
     <p>formタグのmethod属性でPOSTまたはGETを指定し、action属性で実行するPHPファイルを指定するのだ。</p>
-
+    <p class="pdg"></p>
     <h3>テキストフィールドの値をGETメソッドで送信する</h3>
     <p>パラメータをURLに付加する形式のGETメソッドは、</p>
     <p>前節で説明したように<strong>aタグを使って簡単に送信することができる</strong>が、</p>
@@ -72,12 +72,13 @@ error_reporting(E_ALL & ~E_NOTICE);
       </ul>
     </form>
     <p class="pdg"></p><!--  .pdg -->
+    <p class="pdg"></p><!--  .pdg -->
     <h3>GETされた値を調べる</h3>
     <p>GETされた値は$_GETグローバル変数に入る。</p>
     <p>$_POSTと同様に<strong>$_GETもフォームのinput項目の値の配列になる</strong>。</p>
     <p>入力された各値は、<strong>name属性に付けた名前をキーにして配列$_GETに保存される</strong>。</p>
     <p>このファイルにおいて、番号を入力するinputタグのnameには"no"という名前をつけている。</p>
-    <p>そのため、$_GET["no"]でアクセスできる。配列の中に番号があるかどうかは「in_array()」</p>
+    <p>そのため、$_GET["no"]でアクセスできる。<strong>配列の中に番号があるかどうかは「in_array()」</strong></p>
     <p>で判断している。</p>
     <p class="pdg"></p>
 

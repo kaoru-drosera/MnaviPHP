@@ -46,19 +46,19 @@ error_reporting(E_ALL & ~E_NOTICE);
     <h3>送信フォームを作る</h3>
 
     <pre class="gaiyo">
-      // フォーム入力の値を得る(単価と個数)
-      $tanka = $_POST["tanka"];
-      $kosu = $_POST["kosu"];
-      // →formで入力された値が、nameに応じてpostで送られてくる。
-      // これを変数に取る。
+      // GETリクエストのパラメータの値を受け取る
+      $no = $_GET["no"];
+      // GETされた値を取り出す
 
-      // 計算する
-      $price = $tanka * $kosu;
+      // 番号リスト
+      $nolist = [3,5,7,8,9];
 
-      //表示する
-      $tanka = number_format($tanka);
-      $price = number_format($price);
-      echo "単価{$tanka}円 ✖︎ {$kosu}個　は","\n", "{$price}円です。"
+      // 検索する
+      if(in_array($no,$nolist)){
+        echo "{$no}はありました。";
+      } else {
+        echo "{$no}は見つかりませんでした。";
+      }
     </pre><!--  .gaiyo -->
     <div class="codewrap">
       <p class="pdg"></p>
@@ -89,7 +89,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p>$_POSTと同様に<strong>$_GETもフォームのinput項目の値の配列になる</strong>。</p>
     <p>入力された各値は、<strong>name属性に付けた名前をキーにして配列$_GETに保存される</strong>。</p>
     <p>このファイルにおいて、番号を入力するinputタグのnameには"no"という名前をつけている。</p>
-    <p>そのため、$_GET["no"]でアクセスできる。配列の中に番号があるかどうかは「in_array()」</p>
+    <p>そのため、$_GET["no"]でアクセスできる。<strong>配列の中に番号があるかどうかは「in_array()」</strong></p>
     <p>で判断している。</p>
     <p class="pdg"></p>
 

@@ -22,4 +22,39 @@
     }
   }
 
+
+
+  // 配列の文字エンコードのチェックを行う
+  function cken(array $data){
+    $result = true;
+    foreach($data as $key => $value){
+      if(is_array($value)){
+        // 含まれている値が配列の時文字列に連結する
+        $value = inplode("",$value);
+        // 配列に入っている値を連結したストリングスにしてチェックします
+
+      }
+
+      if(!mb_check_encoding($value)){
+        // 文字のエンコードが一致しない時
+        $result = false;
+        // foreachでのスキャニングを中断する
+        break;
+      }
+    }
+    return $result;
+  }
+
+
+  // ※foreach文ですべてのキーと値を取り出す
+  // foreach ($array as $key => $value){
+  //   // $keyと$valueを使った繰り返しの処理
+  // }
+
+  // 「$key => $value」で、(連想？)配列「$array」から
+  // キー→値の順に取り出している。
+
+
+
+
  ?>

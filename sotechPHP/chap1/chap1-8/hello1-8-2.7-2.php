@@ -20,6 +20,9 @@ error_reporting(E_ALL & ~E_NOTICE);
 </head>
 <body>
   <style>
+  *{
+    /* margin: 0; */
+  }
   .table1 thead th{
     background-color: black;
     color: white;
@@ -40,62 +43,182 @@ error_reporting(E_ALL & ~E_NOTICE);
   .imgwrap img{
     width: 100%;
   }
+
+  /* @charset "UTF-8"; */
+  div{
+    margin :1em;
+  }
+  li{
+    list-style-type: none;
+    margin-bottom: 1em;
+  }
+  ol > li{
+    list-style-type: decimal;
+    margin-bottom : 0;
+  }
+  a{
+    color: #5e78c1;
+    text-decolation: none;
+  }
+  a:hover {
+    color :#b04188;
+    text-decoration: underline;
+  }
+  .error{
+    color: #f00;
+  }
+
+
   </style>
   <div class="main-contents">
     <h2>HTTPの基礎知識</h2>
     <p>※$_POSTを使う解説は長く複雑になるので、</p>
-    <p>「hello1-8-2.7-1.php」からはまとめて記述はせずファイルで分けます。</p>
-     <h3>ユーザ関数でhtmlspecialcharsを簡略化！名付けて 「es()」!</h3>
-      <p>ユーザからのデータをブラウザに表示する前に</p>
-      <p>「htmlspecialchars()」を通してHTMLエスケープを行うことが必須になるが、</p>
-      <p>この処理を行う前に<strong>array_map()</strong>をうまく利用したユーザ関数を作っておくと便利。</p>
-      <p class="pdg"></p>
-     <h3>array_map()って？</h3>
-     <p>「array_map()」には2つの使い方がある。</p>
-     <p>1つは指定した配列の要素にコールバック関数を適用したい時である。</p>
-     <p>コールバック関数とは以下のもの。</p>
+    <p>「hello1-8-2.7-1_util.php」からはまとめて記述はせずファイルで分けます。</p>
+     <h3>文字エンコードを効率化。その名も 「cken()」</h3>
+     <p>mb_check_encode()を使って文字エンコードのチェックを効率よく行うcken()を、</p>
+     <p>es()と同じファイルに作ろう。(別ファイルにしようとも考えたが本書通りでないと進行に影響が出そうだから)</p>
+     <p>コードを以下で表示した後、解説に移ろう。</p>
      <pre class="gaiyo">
-        function 関数名($value){
-          // 処理文
-          return 値;
-        }
-     </pre>
-     <p class="pdg"></p>
-     <p>では早速公式も見てみよう。</p>
-     <p><strong>array_map</strong>とはいわゆる<strong>「配列の個々の値でコールバック関数を実行する」</strong>式だ。</p>
-     <pre class="gaiyo">
-       $result = array_map($callBack, $array);
-       // ↑実行後の配列が戻る                ↑元の配列が変化しない
-       // 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　↑コールバック関数名
-     </pre>
-     <p class="pdg"></p>
-     <p>ユーザ定義するコールバック関数では、配列の値を受け取る引数を用意し、処理後の値を返すのだ。</p>
-     <p><strong>引数で与えた配列を直接書き換えるのではなく</strong>、</p>
-     <p><strong>コールバック関数で処理した配列が$resultに入る</strong>ので注意だ。</p>
 
-     <h3>実際にes()を作ってみよう</h3>
-     <p>実際に作ってみよう。こんな感じに。</p>
-     <pre class="gaiyo">
-       // 引数に対してhtmlspecialchars()を実行するes()
+       // 配列の文字エンコードのチェックを行う
+       function cken(array $data){
+         $result = true;
+         foreach($data as $key => $value){
+           if(is_array($value)){
+             // 含まれている値が配列の時文字列に連結する
+             $value = inplode("",$value);
+             // 配列に入っている値を連結したストリングスにしてチェックします
 
-       //XSS対策のためのHTMLエスケープ
-       function es($data, $charset){
-         if(is_array($data)){
-           // 再帰呼び出し
-           return array_map(__METHOD__, $data);
-           // 配列の場合は、値を1づつ引数にして、
-           // 再帰呼び出しをする
+           }
 
-           // 「__METHOD__」は、「現在実行中のメソッド自身を示す特殊な定数(マジック定数)」である。
-           // ここでは「es()」を指すので、esのなかでesを使っていることになる。
-           // この手法が、「再帰呼び出し」である。
-         } else {
-           // HTMLエスケープを使う
-           return htmlspecialchars($data, ENT_QUOTES, $charset)
+           if(!mb_check_encoding($value)){
+             // 文字のエンコードが一致しない時
+             $result = false;
+             // foreachでのスキャニングを中断する
+             break;
+           }
          }
+         return $result;
+       }
+
+
+         // ※foreach文ですべてのキーと値を取り出す
+         // foreach ($array as $key => $value){
+         //   // $keyと$valueを使った繰り返しの処理
+         // }
+
+         // 「$key => $value」で、(連想？)配列「$array」から
+         // キー→値の順に取り出している。
+     </pre>
+
+     <p>foreach文で配列から値を順に$valueに取り出し、</p>
+     <p>もし入っていた値が配列ならimplode()を使って値を1この文字列に連結しておいてから、</p>
+     <p>mb_check_encoding()で文字エンコーディングをチェックする(1階層の多次元配列までに対応)。</p>
+     <p>文字エンコードが一致しない時は$resultにfalseを代入してforeach文の繰り返しを中断する。</p>
+     <p class="pdg"></p>
+
+     <h3>cken()をテストする</h3>
+     <p>では、作ったcken()をテストしよう。</p>
+     <p>ここでは、利用環境がutf-8のときにShift-JISの文字列が入っている配列をテストする。</p>
+     <pre class="gaiyo">
+       // util.phpを読み込む
+       require_once("hello1-8-2.7-1_util.php");
+
+       // Shift-JISのデータを用意する
+       $utf8_string = "こんにちは";
+       $sjis_string = mb_convert_encoding($utf8_string, "Shift-JIS");
+       //                                                                   ↑テスト用にShift-JISに変換する
+
+       // 内部エンコーディングを調べる
+       $encording = mb_internal_encoding();
+
+       // cken()でチェックする
+       if(cken([$sjis_string])){
+         echo "配列の値は、",$encording,"です。";
+       } else {
+         echo "配列の値は、",$encording,"ではありません。";
        }
      </pre>
-     <p class="gaiyo"></p>
+     <pre class="zissyou">
+       <?php
+
+       // util.phpを読み込む
+       require_once("hello1-8-2.7-1_util.php");
+
+       // Shift-JISのデータを用意する
+       $utf8_string = "こんにちは";
+       $sjis_string = mb_convert_encoding($utf8_string, "Shift-JIS");
+       //                                             ↑テスト用にShift-JISに変換する
+
+       // 内部エンコーディングを調べる
+       $encording = mb_internal_encoding();
+
+       // cken()でチェックする
+       if(cken([$sjis_string])){
+         echo "配列の値は、",$encording,"です。";
+       } else {
+         echo "配列の値は、",$encording,"ではありません。";
+       }
+
+        ?>
+     </pre>
+     <p>mb_check_encoding()でShift-JISに変換した文字列$sjis_stringを作成し、</p>
+     <p>これを配列に入れてcken()でチェックする。</p>
+     <p>なお、現在の利用環境の内部エンコードはmb_internal_encording()で調べられる。</p>
+     <p class="pdg"></p>
+     <h3>さいごに・CSS追記情報</h3>
+     <p>最後に、本書で使用しているCSSの追記情報をば。</p>
+     <pre class="gaiyo">
+       /* @charset "UTF-8"; */
+       /* div{
+         margin :1em;
+       }
+       li{
+         list-style-type: none;
+         margin-bottom: 1em;
+       }
+       ol > li{
+         list-style-type: decimal;
+         margin-bottom : 0;
+       }
+       a{
+         color: #5e78c1;
+         text-decolation: none;
+       }
+       a:hover {
+         color :#b04188;
+         text-decoration: underline;
+       }
+       .error{
+         color: #f00;
+       } */
+     </pre>
+     <style>
+      /* @charset "UTF-8"; */
+      /* div{
+        margin :1em;
+      }
+      li{
+        list-style-type: none;
+        margin-bottom: 1em;
+      }
+      ol > li{
+        list-style-type: decimal;
+        margin-bottom : 0;
+      }
+      a{
+        color: #5e78c1;
+        text-decolation: none;
+      }
+      a:hover {
+        color :#b04188;
+        text-decoration: underline;
+      }
+      .error{
+        color: #f00;
+      } */
+
+     </style>
 
 
 

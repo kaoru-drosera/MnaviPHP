@@ -1,8 +1,6 @@
 <?php
 ini_set("display_errors",1);
 error_reporting(E_ALL & ~E_NOTICE);
-
-
  ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -77,30 +75,31 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 
   </style>
-  <div class="main-contents">
-    <h2>HTTPの基礎知識</h2>
-    <p>※$_POSTを使う解説は長く複雑になるので、</p>
-    <p>「hello1-8-2.7-1_util.php」からはまとめて記述はせずファイルで分けます。</p>
-    <p class="pdg"></p><!--  .pdg -->
-     <h3>名前を入力するフォームを作る</h3>
-      <p>入力フォームを表示するコードは次の通り。</p>
-      <div class="imgwrap"><img src="imgs/namecheckForm_gaiyo.png" alt="namecheckForm_gaiyo"></div><!--  .imgwrap -->
-      <form class="form1" action="hello1-8-2.7-3_nameCheck.php" method="POST">
-        <ul>
-          <li><label for="">名前:<input type="text" name="name"></label></li>
-          <li><label for=""><input type="submit" value="送信する"></label></li>
-        </ul>
-      </form>
-      <p>リクエストにはPOSTメソッドを使い、</p>
-      <p>名前を入力するinputタグのname属性には"name"を指定している。</p>
-      <p>なお、このコードにはPHPコードは含まれないので、拡張子はHTMLになる。</p>
+    <div class="main-contents">
+      <h2>HTTPの基礎知識</h2>
+      <p>※$_POSTを使う解説は長く複雑になるので、</p>
+      <p>「hello1-8-2.7-1_util.php」からはまとめて記述はせずファイルで分けます。</p>
+      <h3>「計算する」ボタンで実行するコード</h3>
+      <p>「計算する」ボタンで実行するdiscount.phpでは、</p>
+      <p>POSTされた値を$_POSTで受け取って処理する。</p>
+      <p>hiddenタグを使ってPOSTされたデータも他のデータとの区別もない。</p>
+      <p>ここの値は$_POSTから次のように変数に取り出すこともできる。</p>
+      <p>見えないフィールドからの入力であっても改竄の危険はあるので入力チェックもする。</p>
+      <pre class="gaiyo">
+        // 隠しフィールドを作る
+        ＜input type="hidden" name="discount" value="＜?php echo $discount ?>">
+        ＜input type="hidden" name="tanka" value="＜?php echo $tanka ?>">
+      </pre><!--  .gaiyo -->
+      <a href="hello1-8-2.7-6_discountForm.php">フォームに戻る</a>
 
 
-    <p class="pdg"></p><!--  .pdg -->
-    <p class="pdg"></p><!--  .pdg -->
-    <p class="pdg"></p><!--  .pdg -->
-    <p class="pdg"></p><!--  .pdg -->
-    <p class="pdg"></p><!--  .pdg -->
-  </div><!--  .main-contents -->
+
+      <p class="pdg"></p><!--  .pdg -->
+      <p class="pdg"></p><!--  .pdg -->
+      <p class="pdg"></p><!--  .pdg -->
+      <p class="pdg"></p><!--  .pdg -->
+      <p class="pdg"></p><!--  .pdg -->
+
+    </div><!--  .main-contents -->
 </body>
 </html>

@@ -1,8 +1,6 @@
 <?php
 ini_set("display_errors",1);
 error_reporting(E_ALL & ~E_NOTICE);
-
-
  ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -77,30 +75,40 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 
   </style>
-  <div class="main-contents">
-    <h2>HTTPの基礎知識</h2>
-    <p>※$_POSTを使う解説は長く複雑になるので、</p>
-    <p>「hello1-8-2.7-1_util.php」からはまとめて記述はせずファイルで分けます。</p>
-    <p class="pdg"></p><!--  .pdg -->
-     <h3>名前を入力するフォームを作る</h3>
-      <p>入力フォームを表示するコードは次の通り。</p>
-      <div class="imgwrap"><img src="imgs/namecheckForm_gaiyo.png" alt="namecheckForm_gaiyo"></div><!--  .imgwrap -->
-      <form class="form1" action="hello1-8-2.7-3_nameCheck.php" method="POST">
-        <ul>
-          <li><label for="">名前:<input type="text" name="name"></label></li>
-          <li><label for=""><input type="submit" value="送信する"></label></li>
-        </ul>
-      </form>
-      <p>リクエストにはPOSTメソッドを使い、</p>
-      <p>名前を入力するinputタグのname属性には"name"を指定している。</p>
-      <p>なお、このコードにはPHPコードは含まれないので、拡張子はHTMLになる。</p>
+    <div class="main-contents">
+      <h2>HTTPの基礎知識</h2>
+      <p>※$_POSTを使う解説は長く複雑になるので、</p>
+      <p>「hello1-8-2.7-1_util.php」からはまとめて記述はせずファイルで分けます。</p>
+      <p class="pdg"></p><!--  .pdg -->
+      <h3>「戻る」のボタンを表示する</h3>
+      <p>「戻る」のボタンはフォームを使って作り、</p>
+      <p>クリックしたならば入力フォーム画面のwarikanFormを実行する。</p>
+      <p>この例ではエラーがあったときだけ「戻る」ボタンを表示しているが、</p>
+      <p>この部分のコードをif文の外に出せばエラーがあっても「戻る」ボタンを表示できる。</p>
+      <div class="imgwrap"><img src="imgs/hello1-8-2.7-4_warikan.php_1.png" alt="hello1-8-2.7-4_warikan.php_1.png"></div><!--  .imgwrap -->
 
 
-    <p class="pdg"></p><!--  .pdg -->
-    <p class="pdg"></p><!--  .pdg -->
-    <p class="pdg"></p><!--  .pdg -->
-    <p class="pdg"></p><!--  .pdg -->
-    <p class="pdg"></p><!--  .pdg -->
-  </div><!--  .main-contents -->
+
+
+
+
+
+
+      <a href="hello1-8-2.7-4_warikan_codeKaisetsu.php">説明に戻る</a>
+      <div>
+        <a href="hello1-8-2.7-4_warikan_codeKaisetsu-3.php">エラーがあったかどうかを判断して分岐する</a>
+        |
+
+      </div>
+
+
+
+      <p class="pdg"></p><!--  .pdg -->
+      <p class="pdg"></p><!--  .pdg -->
+      <p class="pdg"></p><!--  .pdg -->
+      <p class="pdg"></p><!--  .pdg -->
+      <p class="pdg"></p><!--  .pdg -->
+
+    </div><!--  .main-contents -->
 </body>
 </html>

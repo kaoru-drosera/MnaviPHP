@@ -1,8 +1,6 @@
 <?php
 ini_set("display_errors",1);
 error_reporting(E_ALL & ~E_NOTICE);
-
-
  ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -82,25 +80,26 @@ error_reporting(E_ALL & ~E_NOTICE);
     <p>※$_POSTを使う解説は長く複雑になるので、</p>
     <p>「hello1-8-2.7-1_util.php」からはまとめて記述はせずファイルで分けます。</p>
     <p class="pdg"></p><!--  .pdg -->
-     <h3>名前を入力するフォームを作る</h3>
-      <p>入力フォームを表示するコードは次の通り。</p>
-      <div class="imgwrap"><img src="imgs/namecheckForm_gaiyo.png" alt="namecheckForm_gaiyo"></div><!--  .imgwrap -->
-      <form class="form1" action="hello1-8-2.7-3_nameCheck.php" method="POST">
-        <ul>
-          <li><label for="">名前:<input type="text" name="name"></label></li>
-          <li><label for=""><input type="submit" value="送信する"></label></li>
-        </ul>
-      </form>
-      <p>リクエストにはPOSTメソッドを使い、</p>
-      <p>名前を入力するinputタグのname属性には"name"を指定している。</p>
-      <p>なお、このコードにはPHPコードは含まれないので、拡張子はHTMLになる。</p>
+     <h3>入力された値が数値かどうか、0でないかどうか</h3>
+      <p>次の例では入力された合計金額と人数から割り勘を計算する。</p>
+      <p>割り算の計算では、入力値が数値でなければならず、また、人数が0人の時は割り算がエラーになる。</p>
+      <p>そこでこのようなエラーが起きないように入力値をチェックする。</p>
+      <p>フォームに入力された値に問題がなければ計算結果を表示するが、</p>
+      <p>エラーがあったならばエラーの内容をリストに表示する。</p>
+      <p>p276とp279の画像欲しい。</p>
 
 
-    <p class="pdg"></p><!--  .pdg -->
-    <p class="pdg"></p><!--  .pdg -->
-    <p class="pdg"></p><!--  .pdg -->
-    <p class="pdg"></p><!--  .pdg -->
-    <p class="pdg"></p><!--  .pdg -->
-  </div><!--  .main-contents -->
+
+
+
+
+
+
+
+     <p class="pdg"></p><!--  .pdg -->
+     <p class="pdg"></p><!--  .pdg -->
+     <p class="pdg"></p><!--  .pdg -->
+     <p class="pdg"></p><!--  .pdg -->
+     <p class="pdg"></p><!--  .pdg -->
 </body>
 </html>

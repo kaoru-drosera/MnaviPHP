@@ -85,12 +85,39 @@ error_reporting(E_ALL & ~E_NOTICE);
       <p>hiddenタグを使ってPOSTされたデータも他のデータとの区別もない。</p>
       <p>ここの値は$_POSTから次のように変数に取り出すこともできる。</p>
       <p>見えないフィールドからの入力であっても改竄の危険はあるので入力チェックもする。</p>
+      </pre><!--  .zissyou -->
       <pre class="gaiyo">
-        // 隠しフィールドを作る
-        ＜input type="hidden" name="discount" value="＜?php echo $discount ?>">
-        ＜input type="hidden" name="tanka" value="＜?php echo $tanka ?>">
+        ＜?php
+          require_once("hello1-8-2.7-1_util.php");
+
+          // エラーメッセージを入れる配列
+          $errors = [];
+          // 割引率の入力値
+          if(isset($_POST['discount'])){
+            $discount = $_POST['discount'];
+            // 入力値のチェック
+            if(!is_numeric($discount)){
+              // 数値でないときエラー
+              $errors[] = "割引率のエラー";
+            }
+          } else{
+            // 未設定エラー
+            $errors[] = "割引率が未設定";
+          }
+
+          // 単価の入力値
+          if(isset($_POST['tanka'])){
+            $tanka = $_POST['tanka'];
+            // 入力値のチェック
+            if(!is_numeric($_POST['tanka'])){
+              $errors[] = "単価のエラー";
+            }
+          } else {
+            $errors[] = "単価が未設定";
+          }
+
+         ?>
       </pre><!--  .gaiyo -->
-      <a href="hello1-8-2.7-6_discountForm.php">フォームに戻る</a>
 
 
 

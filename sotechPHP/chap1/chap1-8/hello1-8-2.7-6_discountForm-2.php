@@ -79,24 +79,44 @@ error_reporting(E_ALL & ~E_NOTICE);
       <h2>HTTPの基礎知識</h2>
       <p>※$_POSTを使う解説は長く複雑になるので、</p>
       <p>「hello1-8-2.7-1_util.php」からはまとめて記述はせずファイルで分けます。</p>
-      <h3>はじめに</h3>
-      <p>hiddenタイプを利用することで、</p>
-      <p>フォームでユーザが入力する値とは別に用意した値をPOSTリクエストに含ませることができる。</p>
-      <p>今回は戻るボタンでフォームページに戻ったときに入力しておいた値を初期値として表示する方法を紹介だ。</p>
-      <p class="pdg"></p><!--  .pdg -->
-      <h3>隠しフィールドでPOSTする</h3>
-      <p class="pdg"></p><!--  .pdg -->
-      <h3>個数だけを入力するフォームを作る</h3>
-      <a href="hello1-8-2.7-6_discountForm.php">最初の説明に戻る</a>
-      <p>割引率と単価を入力するinputタグのtype属性を"hidden"とし、</p>
-      <p>value属性で入力値を設定している点に注目だ。</p>
-      <p>では、コードを見てみよう。</p>
-      <p><strong>以下、解説</strong></p>
-      <ol>
-        <li><a href="hello1-8-2.7-6_discountForm_Codekaisetsu_1.php">見えない入力フォームを作る</a></li>
-      </ol>
+      <h3>戻ったページに前回の入力値を残しておく</h3>
+      <p>「戻る」ボタンで入力フォームに戻った時、</p>
+      <p>新規にフォーム入力画面を表示すると入力フィールドの値は空になっている。</p>
+      <p>前ページに戻った場合には、前回入力した値が残っている方が親切である。</p>
+      <p>このような場合にも、hiddenタイプの入力を利用できる。</p>
+      <p>なお、ページ間の移動で値を持ち帰りたい時には<strong>「セッション関数」</strong>を利用する方法がある。</p>
+      <p>セッション関数については改めて説明する。p368。</p>
 
       <pre class="zissyou">
+        <?php
+
+        require_once("hello1-8-2.7-1_util.php");
+
+        // 文字コードの検証
+        if(!cken($_POST)){
+          $encoding = mb_internal_encoding();
+          $err = "Encoding Error. The expected encoding is".$encoding;
+          // エラーメッセージを出して、すべての処理を停止させる
+          exit($err);
+        }
+
+        // HTMLエスケープ(XSS防止)
+        $_POST = es($_POST);
+
+
+        // 再入力ならば前回の値を初期値にする
+        // 個数に値があるかどうか
+        if(isset($_POST['kosu'])){
+          // discount.phpの隠しフォームから値が送られている場合、
+          $kosu = $_POST['kosu'];
+          // 前回の値が入る
+        } else {
+          $kosu = "";
+        }
+        // 文字コードとHTMLエスケープ一式と、
+        // ↑のコードを付け加える。
+
+         ?>
         <?php
           // 割引率
           $discount = 0.8;
@@ -110,14 +130,15 @@ error_reporting(E_ALL & ~E_NOTICE);
           $tanka_fmt = number_format($tanka);
          ?>
         <!-- 入力フォームを作る -->
-        <form action="hello1-8-2.7-6_discount.php" method="POST">
+        <form action="hello1-8-2.7-6_discount-2.php" method="POST">
           <!-- 隠しフィールドに割引率と単価を設定してPOSTする -->
           <input type="hidden" name="discount" value="<?php echo $discount ?>">
           <input type="hidden" name="tanka" value="<?php echo $tanka ?>">
           <!-- ↑変数に入っている値をPOSTする -->
           <ul>
             <li><label for="">単価:<?php echo $tanka_fmt; ?>円</label></li>
-            <li><label for="">個数:<input type="number" name="kosu"></label></li>
+            <li><label for="">個数:<input type="number" name="kosu" value="<?php echo $kosu; ?>"></label></li>
+            <!-- 個数のフォームのvalueに、「＜?php echo $kosu; ?>」を追加。 -->
             <li><input type="submit" value="計算する"></li>
           </ul>
         </form>
